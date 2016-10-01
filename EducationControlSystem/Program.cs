@@ -16,11 +16,11 @@ namespace EducationControlSystem
         [STAThread]
         static void Main()
         {
-            System.Data.Entity.Database.SetInitializer(new DropCreateDatabaseAlways<EduContext>());
-            using (var eduContext = new EduContext())
-            {
-                eduContext.Database.Initialize(force: true);
-            }
+            //System.Data.Entity.Database.SetInitializer(new DropCreateDatabaseAlways<EduContext>());
+            //using (var eduContext = new EduContext())
+            //{
+            //    eduContext.Database.Initialize(force: true);
+            //}
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
