@@ -31,8 +31,6 @@ namespace EducationControlSystem
 
         public virtual DbSet<SubjectMark> Marks { get; set; }
 
-        public virtual DbSet<StudentSubject> StudentSubject { get; set; }
-
         public virtual DbSet<AdditionalCourse> AdditionalCourses { get; set; }
     }
 

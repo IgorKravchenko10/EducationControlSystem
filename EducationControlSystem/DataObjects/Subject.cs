@@ -15,10 +15,5 @@ namespace EducationControlSystem.DataObjects
 
         public string SubjectName { get; set; }
 
-        /// <summary>
-        /// Является ли предмет экзаменационным
-        /// </summary>
-        public bool IsExam { get; set; }
-
     }
 }

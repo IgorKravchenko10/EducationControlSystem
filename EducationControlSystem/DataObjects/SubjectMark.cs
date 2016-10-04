@@ -8,20 +8,34 @@ using System.Threading.Tasks;
 
 namespace EducationControlSystem.DataObjects
 {
+    public enum State
+    {
+        InProcessing = 0,
+        Completed = 1,
+        Retaking = 2
+    }
+
     public class SubjectMark
     {
         [Key()]
         public int SubjectMarkId { get; set; }
 
+        [ForeignKey("StudentId")]
+        public virtual Student Student { get; set; }
+
+        public int StudentId { get; set; }
+
         public int Mark { get; set; }
-                                
-        public int StudentSubjectId { get; set; }
 
-        /// <summary>
-        /// Ссылка на предмет
-        /// </summary>
-        [ForeignKey("StudentSubjectId")]
-        public virtual StudentSubject StudentSubject { get; set; }
+        [ForeignKey("SubjectId")]
+        public virtual Subject Subject { get; set; }
 
+        public int SubjectId { get; set; }
+
+        public int Semester { get; set; }
+
+        public bool IsExam { get; set; }
+
+        public State State { get; set; }
     }
 }

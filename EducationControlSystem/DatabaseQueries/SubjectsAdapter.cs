@@ -16,7 +16,6 @@ namespace EducationControlSystem.DatabaseQueries
                                                  {
                                                      Id = qr.SubjectId,
                                                      Name = qr.SubjectName,
-                                                     IsExam = qr.IsExam
                                                  };
             List<PrxSubject> subjects = getSubjects.ToList();
             return subjects;

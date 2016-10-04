@@ -63,7 +63,6 @@
     <Compile Include="DatabaseQueries\SubjectsAdapter.cs" />
     <Compile Include="DataObjects\AdditionalCourse.cs" />
     <Compile Include="DataObjects\Student.cs" />
-    <Compile Include="DataObjects\StudentSubject.cs" />
     <Compile Include="DataObjects\StudyGroup.cs" />
     <Compile Include="DataObjects\Subject.cs" />
     <Compile Include="DataObjects\SubjectMark.cs" />

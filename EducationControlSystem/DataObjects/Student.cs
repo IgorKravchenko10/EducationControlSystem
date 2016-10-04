@@ -14,7 +14,7 @@ namespace EducationControlSystem.DataObjects
         public int StudentId { get; set; }
 
         public string StudentName { get; set; }
-         
+
         /// <summary>
         /// Дата рождения студента
         /// </summary>
@@ -41,11 +41,6 @@ namespace EducationControlSystem.DataObjects
         public bool IsContract { get; set; }
 
         /// <summary>
-        /// Список предметов, которые изучает студент
-        /// </summary>
-        public virtual ICollection<StudentSubject> StudentSubjects { get; set; } = new HashSet<StudentSubject>();
-
-        /// <summary>
         /// Внешний ключ на запись в таблице SudyGroups
         /// </summary>
         public int StudyGroupId { get; set; }
@@ -56,5 +51,9 @@ namespace EducationControlSystem.DataObjects
         [ForeignKey("StudyGroupId")]
         public virtual StudyGroup StudyGroup { get; set; }
 
+        /// <summary>
+        /// Список изучаемых предметов
+        /// </summary>
+        public virtual ICollection<SubjectMark> SubjectMarks { get; set; }  = new HashSet<SubjectMark>();
     }
 }
