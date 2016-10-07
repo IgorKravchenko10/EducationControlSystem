@@ -29,7 +29,7 @@ namespace EducationControlSystem
 
         public virtual DbSet<Teacher> Teachers { get; set; }
 
-        public virtual DbSet<SubjectMark> Marks { get; set; }
+        public virtual DbSet<SubjectMark> SubjectMarks { get; set; }
 
         public virtual DbSet<AdditionalCourse> AdditionalCourses { get; set; }
     }

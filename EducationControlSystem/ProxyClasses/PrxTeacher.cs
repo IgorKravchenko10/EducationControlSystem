@@ -11,10 +11,6 @@ namespace EducationControlSystem.ProxyClasses
     public class PrxTeacher : PrxPerson
     {
         
-        /// <summary>
-        /// Является ли преподаватель куратором
-        /// </summary>
-        public bool IsCurator { get; set; }
        
     }
 }

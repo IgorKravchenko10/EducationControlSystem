@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EducationControlSystem.ProxyClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -23,7 +24,7 @@ namespace EducationControlSystem.DataObjects
         /// <summary>
         /// Дата вступления в ВУЗ
         /// </summary>
-        public DateTime DateEntry { get; set; }
+        public int YearEntry { get; set; }
 
         /// <summary>
         /// Номер телефона студента
@@ -41,6 +42,11 @@ namespace EducationControlSystem.DataObjects
         public bool IsContract { get; set; }
 
         /// <summary>
+        /// Чи є студент старостою групи
+        /// </summary>
+        public bool IsLeader { get; set; }
+
+        /// <summary>
         /// Внешний ключ на запись в таблице SudyGroups
         /// </summary>
         public int StudyGroupId { get; set; }
@@ -55,5 +61,21 @@ namespace EducationControlSystem.DataObjects
         /// Список изучаемых предметов
         /// </summary>
         public virtual ICollection<SubjectMark> SubjectMarks { get; set; }  = new HashSet<SubjectMark>();
+
+        public PrxStudent CopyToProxy()
+        {
+            PrxStudent prxStudent = new PrxStudent()
+            {
+                Id = this.StudentId,
+                Name = this.StudentName,
+                PhoneNumber = this.PhoneNumber,
+                YearEntry = this.YearEntry,
+                DateOfBirth = this.DateOfBirth,
+                IsAbroad = this.IsAbroad,
+                IsContract = this.IsContract,
+                IsLeader=this.IsLeader
+            };
+            return prxStudent;
+        }
     }
 }

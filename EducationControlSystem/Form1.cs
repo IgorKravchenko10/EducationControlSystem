@@ -19,9 +19,12 @@ namespace EducationControlSystem
         public Form1()
         {
             InitializeComponent();
-            List<PrxStudent> students = DatabaseQueries.StudentsAdapter.GetStudents(EduContext);
+            List<PrxStudent> students = DatabaseQueries.StudentsAdapter.GetStudentsBySql();
             List<PrxStudent> studentsList = DatabaseQueries.StudentsAdapter.GetListOfGroup(EduContext, 3);
             List<PrxAdditionalCourse> additionalCourses = DatabaseQueries.AdditionalCoursesAdapter.GetAdditionalCourses(EduContext);
+            List<PrxSubjectMark> subjectMarks = DatabaseQueries.SubjectMarksAdapter.GetSubjectMarks(EduContext);
+            List<PrxStudyGroup> studyGroups = DatabaseQueries.StudyGroupsAdapter.GetStudyGroups(EduContext);
+            List<PrxSubjectMark> subjectMarksByGroup = DatabaseQueries.SubjectMarksAdapter.GetSubjectMarksByGroup(EduContext, studyGroups.FirstOrDefault());
             bndStudents.DataSource = additionalCourses;
         }
 

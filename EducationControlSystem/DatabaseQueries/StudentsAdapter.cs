@@ -17,7 +17,7 @@ namespace EducationControlSystem.DatabaseQueries
                                                      Id = qr.StudentId,
                                                      Name = qr.StudentName,
                                                      DateOfBirth = qr.DateOfBirth,
-                                                     DateEntry = qr.DateEntry,
+                                                     YearEntry = qr.YearEntry,
                                                      IsAbroad = qr.IsAbroad,
                                                      PhoneNumber = qr.PhoneNumber,
                                                      IsContract = qr.IsContract
@@ -35,13 +35,28 @@ namespace EducationControlSystem.DatabaseQueries
                                                       Id = qr.StudentId,
                                                       Name = qr.StudentName,
                                                       DateOfBirth = qr.DateOfBirth,
-                                                      DateEntry = qr.DateEntry,
+                                                      YearEntry = qr.YearEntry,
                                                       IsAbroad = qr.IsAbroad,
                                                       PhoneNumber = qr.PhoneNumber,
                                                       IsContract = qr.IsContract
                                                   };
             List<PrxStudent> studentsList = getList.ToList();
             return studentsList;
+        }
+
+        public static List<PrxStudent> GetStudentsBySql()
+        {
+            List<PrxStudent> prxStudents = new List<PrxStudent>();
+
+            using (var eduContext=new EduContext())
+            {
+                var students = eduContext.Students.SqlQuery("select * from dbo.Students").ToList();
+                foreach(var item in students)
+                {
+                    prxStudents.Add(item.CopyToProxy());
+                }
+            }
+            return prxStudents;
         }
     }
 }

@@ -10,10 +10,6 @@ namespace EducationControlSystem.ProxyClasses
 {
     public class PrxSubject : PrxBaseClass
     {
-        /// <summary>
-        /// Является ли предмет экзаменационным
-        /// </summary>
-        public bool IsExam { get; set; }
 
     }
 }

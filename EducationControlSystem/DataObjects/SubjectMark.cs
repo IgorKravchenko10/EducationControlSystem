@@ -8,13 +8,7 @@ using System.Threading.Tasks;
 
 namespace EducationControlSystem.DataObjects
 {
-    public enum State
-    {
-        InProcessing = 0,
-        Completed = 1,
-        Retaking = 2
-    }
-
+    
     public class SubjectMark
     {
         [Key()]
@@ -36,6 +30,6 @@ namespace EducationControlSystem.DataObjects
 
         public bool IsExam { get; set; }
 
-        public State State { get; set; }
+        public int State { get; set; }
     }
 }

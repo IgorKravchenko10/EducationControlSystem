@@ -22,5 +22,7 @@ namespace EducationControlSystem.DatabaseQueries
             List<PrxStudyGroup> studyGroups = getStudyGroups.ToList();
             return studyGroups;
         }
+
+        
     }
 }

@@ -18,7 +18,7 @@ namespace EducationControlSystem.ProxyClasses
         /// <summary>
         /// Дата вступления в ВУЗ
         /// </summary>
-        public DateTime DateEntry { get; set; }
+        public int YearEntry { get; set; }
 
         /// <summary>
         /// Обучается ли студент за границей
@@ -29,6 +29,8 @@ namespace EducationControlSystem.ProxyClasses
         /// Находится ли студент на контрактной форме обучения
         /// </summary>
         public bool IsContract { get; set; }
+
+        public bool IsLeader { get; set; }
 
     }
 }
