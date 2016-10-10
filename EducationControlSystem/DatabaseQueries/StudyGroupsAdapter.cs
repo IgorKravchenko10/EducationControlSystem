@@ -23,6 +23,19 @@ namespace EducationControlSystem.DatabaseQueries
             return studyGroups;
         }
 
-        
+        public static List<PrxStudyGroup> GetStudyGroupsBySql()
+        {
+            List<PrxStudyGroup> prxStudyGroups = new List<PrxStudyGroup>();
+
+            using (var eduContext = new EduContext())
+            {
+                var studyGroups = eduContext.StudyGroups.SqlQuery("select * from dbo.StudyGroups").ToList();
+                foreach (var item in studyGroups)
+                {
+                    prxStudyGroups.Add(item.CopyToProxy());
+                }
+            }
+            return prxStudyGroups;
+        }
     }
 }

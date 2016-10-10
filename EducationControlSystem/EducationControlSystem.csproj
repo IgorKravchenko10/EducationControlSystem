@@ -108,6 +108,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\EducationControlSystem.DataObjects.StudyGroup.datasource" />
     <None Include="Properties\DataSources\EducationControlSystem.ProxyClasses.PrxStudent.datasource" />
     <None Include="Properties\DataSources\EducationControlSystem.ProxyClasses.PrxStudyGroup.datasource" />
     <None Include="Properties\DataSources\EducationControlSystem.ProxyClasses.PrxSubject.datasource" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EducationControlSystem.ProxyClasses;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -24,5 +25,16 @@ namespace EducationControlSystem.DataObjects
         /// Список студентов, обучающихся в группе
         /// </summary>
         public virtual ICollection<Student> Students { get; set; } = new HashSet<Student>();
+
+        public PrxStudyGroup CopyToProxy()
+        {
+            PrxStudyGroup prxStudyGroup = new PrxStudyGroup()
+            {
+                Id = this.StudyGroupId,
+                Name=this.GroupName,
+                StudentsCount=this.StudentsCount
+            };
+            return prxStudyGroup;
+        }
     }
 }

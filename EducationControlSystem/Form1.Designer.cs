@@ -31,26 +31,26 @@
             this.components = new System.ComponentModel.Container();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.grvStudents = new System.Windows.Forms.DataGridView();
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.grvSubjects = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bndStudyGroups = new System.Windows.Forms.BindingSource(this.components);
+            this.grvStudents = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateEntryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isAbroadDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.isContractDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bndStudents = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grvStudents)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // treeView1
@@ -69,27 +69,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(940, 462);
             this.panel1.TabIndex = 2;
-            // 
-            // grvStudents
-            // 
-            this.grvStudents.AllowUserToAddRows = false;
-            this.grvStudents.AllowUserToDeleteRows = false;
-            this.grvStudents.AutoGenerateColumns = false;
-            this.grvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.phoneNumberDataGridViewTextBoxColumn,
-            this.dateOfBirthDataGridViewTextBoxColumn,
-            this.dateEntryDataGridViewTextBoxColumn,
-            this.isAbroadDataGridViewCheckBoxColumn,
-            this.isContractDataGridViewCheckBoxColumn});
-            this.grvStudents.DataSource = this.bndStudents;
-            this.grvStudents.Location = new System.Drawing.Point(0, 0);
-            this.grvStudents.Name = "grvStudents";
-            this.grvStudents.ReadOnly = true;
-            this.grvStudents.Size = new System.Drawing.Size(353, 187);
-            this.grvStudents.TabIndex = 0;
             // 
             // grvSubjects
             // 
@@ -125,6 +104,26 @@
             // 
             this.bndStudyGroups.DataSource = typeof(EducationControlSystem.ProxyClasses.PrxStudyGroup);
             // 
+            // grvStudents
+            // 
+            this.grvStudents.AllowUserToAddRows = false;
+            this.grvStudents.AllowUserToDeleteRows = false;
+            this.grvStudents.AutoGenerateColumns = false;
+            this.grvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.phoneNumberDataGridViewTextBoxColumn,
+            this.dateOfBirthDataGridViewTextBoxColumn,
+            this.isAbroadDataGridViewCheckBoxColumn,
+            this.isContractDataGridViewCheckBoxColumn});
+            this.grvStudents.DataSource = this.bndStudents;
+            this.grvStudents.Location = new System.Drawing.Point(0, 0);
+            this.grvStudents.Name = "grvStudents";
+            this.grvStudents.ReadOnly = true;
+            this.grvStudents.Size = new System.Drawing.Size(353, 187);
+            this.grvStudents.TabIndex = 0;
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -153,13 +152,6 @@
             this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
             this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dateEntryDataGridViewTextBoxColumn
-            // 
-            this.dateEntryDataGridViewTextBoxColumn.DataPropertyName = "DateEntry";
-            this.dateEntryDataGridViewTextBoxColumn.HeaderText = "Дата вступу";
-            this.dateEntryDataGridViewTextBoxColumn.Name = "dateEntryDataGridViewTextBoxColumn";
-            this.dateEntryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // isAbroadDataGridViewCheckBoxColumn
             // 
             this.isAbroadDataGridViewCheckBoxColumn.DataPropertyName = "IsAbroad";
@@ -178,22 +170,33 @@
             // 
             this.bndStudents.DataSource = typeof(EducationControlSystem.ProxyClasses.PrxStudent);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(28, 175);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1188, 486);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.treeView1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grvStudents)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grvStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,6 +218,7 @@
         private System.Windows.Forms.DataGridView grvSubjects;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

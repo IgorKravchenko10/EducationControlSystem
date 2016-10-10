@@ -13,7 +13,7 @@ namespace EducationControlSystem.DatabaseQueries
         public static List<PrxSubjectMark> GetSubjectMarksByGroup(EduContext eduContext, PrxStudyGroup studyGroup)
         {
 
-            IQueryable < PrxSubjectMark > getSubjectMarks = from qr in eduContext.SubjectMarks
+            IQueryable <PrxSubjectMark> getSubjectMarks = from qr in eduContext.SubjectMarks
                                                             join student in eduContext.Students on studyGroup.Id equals student.StudyGroupId
                                                             join subjectMark in eduContext.SubjectMarks on student.StudentId equals subjectMark.StudentId
                                                             join subject in eduContext.Subjects on subjectMark.SubjectId equals subject.SubjectId

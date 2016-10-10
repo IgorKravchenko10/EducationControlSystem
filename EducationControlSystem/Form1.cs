@@ -20,12 +20,7 @@ namespace EducationControlSystem
         {
             InitializeComponent();
             List<PrxStudent> students = DatabaseQueries.StudentsAdapter.GetStudentsBySql();
-            List<PrxStudent> studentsList = DatabaseQueries.StudentsAdapter.GetListOfGroup(EduContext, 3);
-            List<PrxAdditionalCourse> additionalCourses = DatabaseQueries.AdditionalCoursesAdapter.GetAdditionalCourses(EduContext);
-            List<PrxSubjectMark> subjectMarks = DatabaseQueries.SubjectMarksAdapter.GetSubjectMarks(EduContext);
-            List<PrxStudyGroup> studyGroups = DatabaseQueries.StudyGroupsAdapter.GetStudyGroups(EduContext);
-            List<PrxSubjectMark> subjectMarksByGroup = DatabaseQueries.SubjectMarksAdapter.GetSubjectMarksByGroup(EduContext, studyGroups.FirstOrDefault());
-            bndStudents.DataSource = additionalCourses;
+            bndStudents.DataSource = students;
         }
 
         public void AddToDatabase()
@@ -59,6 +54,12 @@ namespace EducationControlSystem
             this.grvSubjects.Dock = DockStyle.Fill;
             this.grvStudents.Visible = (dataGridView == this.grvStudents);
             this.grvSubjects.Visible = (dataGridView == this.grvSubjects);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmAddStudent frmAddStudent = new FrmAddStudent();
+            frmAddStudent.Show();
         }
     }
 }
