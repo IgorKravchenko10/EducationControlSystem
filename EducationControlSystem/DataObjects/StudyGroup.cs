@@ -14,12 +14,12 @@ namespace EducationControlSystem.DataObjects
         [Key()]
         public int StudyGroupId { get; set; }
 
-        public string GroupName { get; set; }
+        public string GroupName { get; set; }            
 
-        /// <summary>
-        /// Количество студентов, обучаемых в группе
-        /// </summary>
-        public int StudentsCount { get; set; }        
+        public int TeacherId { get; set; }
+
+        [ForeignKey("TeacherId")]
+        public virtual Teacher Curator { get; set; }
 
         /// <summary>
         /// Список студентов, обучающихся в группе
@@ -32,7 +32,6 @@ namespace EducationControlSystem.DataObjects
             {
                 Id = this.StudyGroupId,
                 Name=this.GroupName,
-                StudentsCount=this.StudentsCount
             };
             return prxStudyGroup;
         }

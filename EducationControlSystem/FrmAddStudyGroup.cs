@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EducationControlSystem
 {
-    public partial class FrmException : Form
+    public partial class FrmAddStudyGroup : Form
     {
-        public FrmException()
+        public FrmAddStudyGroup()
         {
             InitializeComponent();
         }

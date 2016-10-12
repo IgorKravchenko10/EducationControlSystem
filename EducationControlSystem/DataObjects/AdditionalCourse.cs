@@ -21,5 +21,10 @@ namespace EducationControlSystem.DataObjects
         public int SubjectId { get; set; }
 
         public int StudyCourse { get; set; }
+
+        public int TeacherId { get; set; }
+
+        [ForeignKey("TeacherId")]
+        public virtual Teacher Teacher { get; set; }
     }
 }

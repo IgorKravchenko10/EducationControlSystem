@@ -32,10 +32,20 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grvSubjects = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bndStudyGroups = new System.Windows.Forms.BindingSource(this.components);
             this.grvStudents = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudyGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.YearEntry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isAbroadDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isContractDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IsLeader = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bndStudents = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.новийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,23 +54,13 @@
             this.дисциплінаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.викладачToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.видалитиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bndStudyGroups = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isAbroadDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isContractDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.bndStudents = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjects)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvStudents)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).BeginInit();
             this.SuspendLayout();
             // 
             // treeView1
@@ -101,6 +101,24 @@
             this.grvSubjects.Size = new System.Drawing.Size(353, 187);
             this.grvSubjects.TabIndex = 1;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Ім\'я";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // bndStudyGroups
+            // 
+            this.bndStudyGroups.DataSource = typeof(EducationControlSystem.ProxyClasses.PrxStudyGroup);
+            // 
             // grvStudents
             // 
             this.grvStudents.AllowUserToAddRows = false;
@@ -124,12 +142,40 @@
             this.grvStudents.Size = new System.Drawing.Size(353, 187);
             this.grvStudents.TabIndex = 0;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Ім\'я";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // StudyGroupName
             // 
             this.StudyGroupName.DataPropertyName = "StudyGroup.Name";
             this.StudyGroupName.HeaderText = "Група";
             this.StudyGroupName.Name = "StudyGroupName";
             this.StudyGroupName.ReadOnly = true;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Номер телефону";
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateOfBirthDataGridViewTextBoxColumn
+            // 
+            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
+            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "Дата народження";
+            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+            this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // YearEntry
             // 
@@ -138,12 +184,30 @@
             this.YearEntry.Name = "YearEntry";
             this.YearEntry.ReadOnly = true;
             // 
+            // isAbroadDataGridViewCheckBoxColumn
+            // 
+            this.isAbroadDataGridViewCheckBoxColumn.DataPropertyName = "IsAbroad";
+            this.isAbroadDataGridViewCheckBoxColumn.HeaderText = "За кордоном";
+            this.isAbroadDataGridViewCheckBoxColumn.Name = "isAbroadDataGridViewCheckBoxColumn";
+            this.isAbroadDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // isContractDataGridViewCheckBoxColumn
+            // 
+            this.isContractDataGridViewCheckBoxColumn.DataPropertyName = "IsContract";
+            this.isContractDataGridViewCheckBoxColumn.HeaderText = "Контрактна форма навчання";
+            this.isContractDataGridViewCheckBoxColumn.Name = "isContractDataGridViewCheckBoxColumn";
+            this.isContractDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
             // IsLeader
             // 
             this.IsLeader.DataPropertyName = "IsLeader";
             this.IsLeader.HeaderText = "Староста";
             this.IsLeader.Name = "IsLeader";
             this.IsLeader.ReadOnly = true;
+            // 
+            // bndStudents
+            // 
+            this.bndStudents.DataSource = typeof(EducationControlSystem.ProxyClasses.PrxStudent);
             // 
             // contextMenuStrip1
             // 
@@ -194,70 +258,6 @@
             this.видалитиToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.видалитиToolStripMenuItem.Text = "Видалити";
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Ім\'я";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // bndStudyGroups
-            // 
-            this.bndStudyGroups.DataSource = typeof(EducationControlSystem.ProxyClasses.PrxStudyGroup);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Ім\'я";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "Номер телефону";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateOfBirthDataGridViewTextBoxColumn
-            // 
-            this.dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn.HeaderText = "Дата народження";
-            this.dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
-            this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // isAbroadDataGridViewCheckBoxColumn
-            // 
-            this.isAbroadDataGridViewCheckBoxColumn.DataPropertyName = "IsAbroad";
-            this.isAbroadDataGridViewCheckBoxColumn.HeaderText = "За кордоном";
-            this.isAbroadDataGridViewCheckBoxColumn.Name = "isAbroadDataGridViewCheckBoxColumn";
-            this.isAbroadDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // isContractDataGridViewCheckBoxColumn
-            // 
-            this.isContractDataGridViewCheckBoxColumn.DataPropertyName = "IsContract";
-            this.isContractDataGridViewCheckBoxColumn.HeaderText = "Контрактна форма навчання";
-            this.isContractDataGridViewCheckBoxColumn.Name = "isContractDataGridViewCheckBoxColumn";
-            this.isContractDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // bndStudents
-            // 
-            this.bndStudents.DataSource = typeof(EducationControlSystem.ProxyClasses.PrxStudent);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,11 +270,11 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjects)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvStudents)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).EndInit();
             this.ResumeLayout(false);
 
         }

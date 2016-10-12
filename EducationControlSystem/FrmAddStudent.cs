@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace EducationControlSystem
 {
-    public partial class FrmAddStudent : Form
+    public partial class FrmAddStudent : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public FrmAddStudent()
         {
@@ -53,7 +53,14 @@ namespace EducationControlSystem
             educontext.SaveChanges();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
         {
             try
             {
@@ -62,13 +69,8 @@ namespace EducationControlSystem
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show("Будь ласка, заповніть усі поля", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

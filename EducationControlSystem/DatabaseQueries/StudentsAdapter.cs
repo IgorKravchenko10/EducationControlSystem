@@ -26,7 +26,6 @@ namespace EducationControlSystem.DatabaseQueries
                                                      {
                                                          Id = qr.StudyGroup.StudyGroupId,
                                                          Name = qr.StudyGroup.GroupName,
-                                                         StudentsCount = qr.StudyGroup.StudentsCount
                                                      }
                                                  };
             List<PrxStudent> students = getStudents.ToList();

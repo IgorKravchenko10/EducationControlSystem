@@ -17,7 +17,6 @@ namespace EducationControlSystem.DatabaseQueries
                                                        {
                                                            Id = qr.StudyGroupId,
                                                            Name = qr.GroupName,
-                                                           StudentsCount = qr.StudentsCount
                                                        };
             List<PrxStudyGroup> studyGroups = getStudyGroups.ToList();
             return studyGroups;
@@ -31,7 +30,6 @@ namespace EducationControlSystem.DatabaseQueries
                                                        {
                                                            Id = qr.StudyGroupId,
                                                            Name = qr.GroupName,
-                                                           StudentsCount = qr.StudentsCount
                                                        };
             List<PrxStudyGroup> studyGroups = getStudyGroups.ToList();
             return studyGroups.FirstOrDefault();

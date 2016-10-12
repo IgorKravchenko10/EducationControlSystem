@@ -11,18 +11,14 @@ namespace EducationControlSystem.ProxyClasses
 {
     public class PrxStudyGroup : PrxBaseClass
     {
-        /// <summary>
-        /// Количество студентов, обучаемых в группе
-        /// </summary>
-        public int StudentsCount { get; set; }
-
+        public PrxTeacher Teacher { get; set; }
+          
         public StudyGroup CopyToData()
         {
             StudyGroup studyGroup = new StudyGroup()
             {
                 GroupName = this.Name,
                 StudyGroupId = this.Id,
-                StudentsCount=this.Id
             };
             return studyGroup;
         }
