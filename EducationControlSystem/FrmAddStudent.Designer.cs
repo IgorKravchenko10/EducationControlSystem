@@ -32,15 +32,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtBoxName = new System.Windows.Forms.TextBox();
             this.txtBoxPhoneNumber = new System.Windows.Forms.TextBox();
             this.dateTimePickerBirth = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.checkBoxIsAbroad = new System.Windows.Forms.CheckBox();
             this.checkBoxOnContract = new System.Windows.Forms.CheckBox();
             this.checkBoxIsLeader = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.cmdStudyGroups = new System.Windows.Forms.ComboBox();
             this.txtBoxYearEntry = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -81,6 +81,15 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Phone number:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(67, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Study group:";
+            // 
             // txtBoxName
             // 
             this.txtBoxName.Location = new System.Drawing.Point(143, 6);
@@ -105,27 +114,27 @@
             this.dateTimePickerBirth.TabIndex = 9;
             this.dateTimePickerBirth.Value = new System.DateTime(2016, 10, 10, 0, 0, 0, 0);
             // 
-            // button1
+            // btnOk
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Location = new System.Drawing.Point(268, 214);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnOk.Location = new System.Drawing.Point(268, 214);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.TabIndex = 14;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnCancel
             // 
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(349, 214);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Cancel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(349, 214);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 15;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.button2_Click);
             // 
             // checkBoxIsAbroad
             // 
@@ -157,24 +166,13 @@
             this.checkBoxIsLeader.Text = "Is leader of study group";
             this.checkBoxIsLeader.UseVisualStyleBackColor = true;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 113);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Study group:";
-            // 
             // cmdStudyGroups
             // 
-            this.cmdStudyGroups.DisplayMember = "Prx";
             this.cmdStudyGroups.FormattingEnabled = true;
             this.cmdStudyGroups.Location = new System.Drawing.Point(143, 110);
             this.cmdStudyGroups.Name = "cmdStudyGroups";
             this.cmdStudyGroups.Size = new System.Drawing.Size(200, 21);
             this.cmdStudyGroups.TabIndex = 17;
-            this.cmdStudyGroups.SelectedIndexChanged += new System.EventHandler(this.cmdStudyGroups_SelectedIndexChanged);
             // 
             // txtBoxYearEntry
             // 
@@ -193,8 +191,8 @@
             this.Controls.Add(this.checkBoxIsLeader);
             this.Controls.Add(this.checkBoxOnContract);
             this.Controls.Add(this.checkBoxIsAbroad);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dateTimePickerBirth);
             this.Controls.Add(this.txtBoxPhoneNumber);
             this.Controls.Add(this.txtBoxName);
@@ -217,15 +215,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBoxName;
         private System.Windows.Forms.TextBox txtBoxPhoneNumber;
         private System.Windows.Forms.DateTimePicker dateTimePickerBirth;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.CheckBox checkBoxIsAbroad;
         private System.Windows.Forms.CheckBox checkBoxOnContract;
         private System.Windows.Forms.CheckBox checkBoxIsLeader;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmdStudyGroups;
         private System.Windows.Forms.TextBox txtBoxYearEntry;
     }

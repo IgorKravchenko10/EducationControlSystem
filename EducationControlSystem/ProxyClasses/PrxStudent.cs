@@ -32,5 +32,7 @@ namespace EducationControlSystem.ProxyClasses
 
         public bool IsLeader { get; set; }
 
+        public PrxStudyGroup StudyGroup { get; set; }
+
     }
 }

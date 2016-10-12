@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EducationControlSystem.DataObjects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,5 +16,15 @@ namespace EducationControlSystem.ProxyClasses
         /// </summary>
         public int StudentsCount { get; set; }
 
+        public StudyGroup CopyToData()
+        {
+            StudyGroup studyGroup = new StudyGroup()
+            {
+                GroupName = this.Name,
+                StudyGroupId = this.Id,
+                StudentsCount=this.Id
+            };
+            return studyGroup;
+        }
     }
 }

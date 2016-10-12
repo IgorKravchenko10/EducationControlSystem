@@ -32,10 +32,21 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.grvSubjects = new System.Windows.Forms.DataGridView();
+            this.grvStudents = new System.Windows.Forms.DataGridView();
+            this.StudyGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.YearEntry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsLeader = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.новийToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.студентToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.групаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.дисциплінаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.викладачToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.видалитиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bndStudyGroups = new System.Windows.Forms.BindingSource(this.components);
-            this.grvStudents = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,18 +54,19 @@
             this.isAbroadDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.isContractDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.bndStudents = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjects)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvStudents)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).BeginInit();
             this.SuspendLayout();
             // 
             // treeView1
             // 
+            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.treeView1.Location = new System.Drawing.Point(12, 12);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(218, 462);
@@ -63,6 +75,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.grvSubjects);
             this.panel1.Controls.Add(this.grvStudents);
             this.panel1.Location = new System.Drawing.Point(236, 12);
@@ -86,6 +101,99 @@
             this.grvSubjects.Size = new System.Drawing.Size(353, 187);
             this.grvSubjects.TabIndex = 1;
             // 
+            // grvStudents
+            // 
+            this.grvStudents.AllowUserToAddRows = false;
+            this.grvStudents.AllowUserToDeleteRows = false;
+            this.grvStudents.AutoGenerateColumns = false;
+            this.grvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.StudyGroupName,
+            this.phoneNumberDataGridViewTextBoxColumn,
+            this.dateOfBirthDataGridViewTextBoxColumn,
+            this.YearEntry,
+            this.isAbroadDataGridViewCheckBoxColumn,
+            this.isContractDataGridViewCheckBoxColumn,
+            this.IsLeader});
+            this.grvStudents.DataSource = this.bndStudents;
+            this.grvStudents.Location = new System.Drawing.Point(0, 0);
+            this.grvStudents.Name = "grvStudents";
+            this.grvStudents.ReadOnly = true;
+            this.grvStudents.Size = new System.Drawing.Size(353, 187);
+            this.grvStudents.TabIndex = 0;
+            // 
+            // StudyGroupName
+            // 
+            this.StudyGroupName.DataPropertyName = "StudyGroup.Name";
+            this.StudyGroupName.HeaderText = "Група";
+            this.StudyGroupName.Name = "StudyGroupName";
+            this.StudyGroupName.ReadOnly = true;
+            // 
+            // YearEntry
+            // 
+            this.YearEntry.DataPropertyName = "YearEntry";
+            this.YearEntry.HeaderText = "Дата вступу";
+            this.YearEntry.Name = "YearEntry";
+            this.YearEntry.ReadOnly = true;
+            // 
+            // IsLeader
+            // 
+            this.IsLeader.DataPropertyName = "IsLeader";
+            this.IsLeader.HeaderText = "Староста";
+            this.IsLeader.Name = "IsLeader";
+            this.IsLeader.ReadOnly = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.новийToolStripMenuItem,
+            this.видалитиToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(127, 48);
+            // 
+            // новийToolStripMenuItem
+            // 
+            this.новийToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.студентToolStripMenuItem,
+            this.групаToolStripMenuItem,
+            this.дисциплінаToolStripMenuItem,
+            this.викладачToolStripMenuItem});
+            this.новийToolStripMenuItem.Name = "новийToolStripMenuItem";
+            this.новийToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.новийToolStripMenuItem.Text = "Новий";
+            // 
+            // студентToolStripMenuItem
+            // 
+            this.студентToolStripMenuItem.Name = "студентToolStripMenuItem";
+            this.студентToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.студентToolStripMenuItem.Text = "Студент";
+            // 
+            // групаToolStripMenuItem
+            // 
+            this.групаToolStripMenuItem.Name = "групаToolStripMenuItem";
+            this.групаToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.групаToolStripMenuItem.Text = "Група";
+            // 
+            // дисциплінаToolStripMenuItem
+            // 
+            this.дисциплінаToolStripMenuItem.Name = "дисциплінаToolStripMenuItem";
+            this.дисциплінаToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.дисциплінаToolStripMenuItem.Text = "Дисципліна";
+            // 
+            // викладачToolStripMenuItem
+            // 
+            this.викладачToolStripMenuItem.Name = "викладачToolStripMenuItem";
+            this.викладачToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.викладачToolStripMenuItem.Text = "Викладач";
+            // 
+            // видалитиToolStripMenuItem
+            // 
+            this.видалитиToolStripMenuItem.Name = "видалитиToolStripMenuItem";
+            this.видалитиToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.видалитиToolStripMenuItem.Text = "Видалити";
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
@@ -103,26 +211,6 @@
             // bndStudyGroups
             // 
             this.bndStudyGroups.DataSource = typeof(EducationControlSystem.ProxyClasses.PrxStudyGroup);
-            // 
-            // grvStudents
-            // 
-            this.grvStudents.AllowUserToAddRows = false;
-            this.grvStudents.AllowUserToDeleteRows = false;
-            this.grvStudents.AutoGenerateColumns = false;
-            this.grvStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.phoneNumberDataGridViewTextBoxColumn,
-            this.dateOfBirthDataGridViewTextBoxColumn,
-            this.isAbroadDataGridViewCheckBoxColumn,
-            this.isContractDataGridViewCheckBoxColumn});
-            this.grvStudents.DataSource = this.bndStudents;
-            this.grvStudents.Location = new System.Drawing.Point(0, 0);
-            this.grvStudents.Name = "grvStudents";
-            this.grvStudents.ReadOnly = true;
-            this.grvStudents.Size = new System.Drawing.Size(353, 187);
-            this.grvStudents.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -170,22 +258,11 @@
             // 
             this.bndStudents.DataSource = typeof(EducationControlSystem.ProxyClasses.PrxStudent);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(28, 175);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1188, 486);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.treeView1);
             this.Name = "Form1";
@@ -193,10 +270,11 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjects)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvStudents)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -208,17 +286,26 @@
         private System.Windows.Forms.BindingSource bndStudents;
         private System.Windows.Forms.BindingSource bndStudyGroups;
         private System.Windows.Forms.BindingSource bindingSource2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateEntryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isAbroadDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isContractDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridView grvSubjects;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudyGroupName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn YearEntry;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isAbroadDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isContractDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsLeader;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem новийToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem студентToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem групаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem дисциплінаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem викладачToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem видалитиToolStripMenuItem;
     }
 }
 

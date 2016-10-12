@@ -29,18 +29,11 @@ namespace EducationControlSystem
         public void FillComboBox()
         {
             List<PrxStudyGroup> studyGroups = StudyGroupsAdapter.GetStudyGroupsBySql();
-            foreach (var item in studyGroups)
-            {
-                cmdStudyGroups.DataSource = item;
-            }
+
             cmdStudyGroups.DataSource = studyGroups;
             cmdStudyGroups.ValueMember = "Id";
             cmdStudyGroups.DisplayMember = "Name";
             
-        }
-
-        private void cmdStudyGroups_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
 
         public void AddToDatabase()
@@ -50,7 +43,7 @@ namespace EducationControlSystem
             student.DateOfBirth = dateTimePickerBirth.Value;
             student.YearEntry = Convert.ToInt32(txtBoxYearEntry.Text);
             student.PhoneNumber = txtBoxPhoneNumber.Text;
-            student.StudyGroup = (StudyGroup)cmdStudyGroups.SelectedItem;
+            student.StudyGroupId = (int)cmdStudyGroups.SelectedValue;
             student.IsAbroad = checkBoxIsAbroad.Checked;
             student.IsContract = checkBoxOnContract.Checked;
             student.IsLeader = checkBoxIsLeader.Checked;
@@ -65,10 +58,11 @@ namespace EducationControlSystem
             try
             {
                 AddToDatabase();
+                this.Close();
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 
