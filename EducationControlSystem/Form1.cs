@@ -12,23 +12,38 @@ using System.Windows.Forms;
 
 namespace EducationControlSystem
 {
-    public partial class Form1 : Form
+    public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public EduContext EduContext = new EduContext();
 
         public Form1()
         {
             InitializeComponent();
-            LoadData();
-        }
-
-        public void LoadData()
-        {
-            List<PrxStudent> students = DatabaseQueries.StudentsAdapter.GetStudents(EduContext);
-            bndStudents.DataSource = students;
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+            FillTree();
+            LoadData();
+
+        }
+
+        private enum GroupTreeNodeTypeEnum
+        {
+            Students,
+            Subjects,
+            Teachers,
+            StudyGroups,
+            AdditionalCourses
+        }
+
+        private class GroupTreeNode
+        {
+            public GroupTreeNodeTypeEnum GroupTreeNodeType { get; set; }
+
+        }
+
+        public void FillTree()
         {
             CreateNodeContextMenu();
 
@@ -37,19 +52,80 @@ namespace EducationControlSystem
 
             TreeNode studentsTreeNode = new TreeNode("Студенти");
             studentsTreeNode.ContextMenu = _NodeStudentContextMenu;
+            GroupTreeNode groupTreeNode = new GroupTreeNode()
+            {
+                GroupTreeNodeType=GroupTreeNodeTypeEnum.Students
+            };
             rootTreeNode.Nodes.Add(studentsTreeNode);
+            studentsTreeNode.Tag = groupTreeNode;
 
             TreeNode studyGroupsTreeNode = new TreeNode("Навчальні групи");
             rootTreeNode.Nodes.Add(studyGroupsTreeNode);
+            groupTreeNode = new GroupTreeNode()
+            {
+                GroupTreeNodeType=GroupTreeNodeTypeEnum.StudyGroups
+            };
+            studyGroupsTreeNode.Tag = groupTreeNode;
 
             TreeNode subjectsTreeNode = new TreeNode("Предмети");
             rootTreeNode.Nodes.Add(subjectsTreeNode);
+            groupTreeNode = new GroupTreeNode()
+            {
+                GroupTreeNodeType = GroupTreeNodeTypeEnum.Subjects
+            };
+            subjectsTreeNode.Tag = groupTreeNode;
 
             TreeNode teachersTreeNode = new TreeNode("Викладачі");
             rootTreeNode.Nodes.Add(teachersTreeNode);
+            groupTreeNode = new GroupTreeNode()
+            {
+                GroupTreeNodeType = GroupTreeNodeTypeEnum.Teachers
+            };
+            teachersTreeNode.Tag = groupTreeNode;
 
             TreeNode additionalCoursesTreeNode = new TreeNode("Додаткові курси");
             rootTreeNode.Nodes.Add(additionalCoursesTreeNode);
+            groupTreeNode = new GroupTreeNode()
+            {
+                GroupTreeNodeType = GroupTreeNodeTypeEnum.AdditionalCourses
+            };
+            additionalCoursesTreeNode.Tag = groupTreeNode;
+        }
+
+        public void LoadStudents()
+        {
+            List<PrxStudent> students = DatabaseQueries.StudentsAdapter.GetList(EduContext);
+            bndStudents.DataSource = students;
+        }
+
+        public void LoadSubjects()
+        {
+            List<PrxSubject> subjects = DatabaseQueries.SubjectsAdapter.GetSubjects(EduContext);
+            bndSubjects.DataSource = subjects;
+        }
+
+        public void LoadStudyGroups()
+        {
+            List<PrxStudyGroup> studyGroups = DatabaseQueries.StudyGroupsAdapter.GetList(EduContext);
+            bndStudyGroups.DataSource = studyGroups;
+        }
+
+        public void LoadTeachers()
+        {
+            List<PrxTeacher> teachers = DatabaseQueries.TeacherAdapter.GetList(EduContext);
+            bndTeachers.DataSource = teachers;
+        }
+
+        public void LoadAdditionalCourses()
+        {
+            List<PrxAdditionalCourse> additionalCourses = DatabaseQueries.AdditionalCoursesAdapter.GetAdditionalCourses(EduContext);
+            bndAdditionalCourses.DataSource = additionalCourses;
+
+        }
+        public void LoadData()
+        {
+            
+
         }
 
         private ContextMenu _NodeStudentContextMenu;
@@ -76,16 +152,101 @@ namespace EducationControlSystem
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            SetGridVisible(grvStudents);
+            if (e.Node.Tag == null)
+            {
+                SetGridVisible(this.grvStudents);
+                LoadStudents();
+                this.bndStudents.ResetBindings(false);
+            }
+
+            if (e.Node.Tag is GroupTreeNode)
+            {
+                GroupTreeNode groupTreeNode = (GroupTreeNode)e.Node.Tag;
+                switch (((GroupTreeNode)e.Node.Tag).GroupTreeNodeType)
+                {
+                    case GroupTreeNodeTypeEnum.Students:
+                        SetGridVisible(this.grvStudents);
+                        LoadStudents();
+                        this.bndStudents.ResetBindings(false);
+                        break;
+                    case GroupTreeNodeTypeEnum.StudyGroups:
+                        SetGridVisible(this.grvStudyGroups);
+                        LoadStudyGroups();
+                        this.bndStudyGroups.ResetBindings(false);
+                        break;
+                    case GroupTreeNodeTypeEnum.Subjects:
+                        SetGridVisible(this.grvSubjects);
+                        LoadSubjects();
+                        this.bndSubjects.ResetBindings(false);
+                        break;
+                    case GroupTreeNodeTypeEnum.Teachers:
+                        SetGridVisible(this.grvTeachers);
+                        LoadTeachers();
+                        this.bndTeachers.ResetBindings(false);
+                        break;
+                    case GroupTreeNodeTypeEnum.AdditionalCourses:
+                        SetGridVisible(this.grvAdditionalCourse);
+                        LoadAdditionalCourses();
+                        this.bndAdditionalCourses.ResetBindings(false);
+                        break;
+                }
+            }
         }
 
         private void SetGridVisible(DataGridView dataGridView)
         {
             this.grvStudents.Dock = DockStyle.Fill;
+            this.grvStudyGroups.Dock = DockStyle.Fill;
             this.grvSubjects.Dock = DockStyle.Fill;
+            this.grvTeachers.Dock = DockStyle.Fill;
+            this.grvAdditionalCourse.Dock = DockStyle.Fill;
+
             this.grvStudents.Visible = (dataGridView == this.grvStudents);
+            this.grvStudyGroups.Visible = (dataGridView == this.grvStudyGroups);
             this.grvSubjects.Visible = (dataGridView == this.grvSubjects);
+            this.grvTeachers.Visible = (dataGridView == this.grvTeachers);
+            this.grvAdditionalCourse.Visible = (dataGridView == this.grvAdditionalCourse);
         }
-                
+
+        private void btnAddStudent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (FrmAddStudent frmAddStudent = new FrmAddStudent())
+            {
+                if (frmAddStudent.ShowDialog(this) == DialogResult.OK)
+                {
+                    LoadData();
+                    this.bndStudents.ResetBindings(false);
+                }
+            }
+        }
+
+        private void btnAddStudyGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (FrmAddStudyGroup frmAddstudyGroup = new FrmAddStudyGroup())
+            {
+                if (frmAddstudyGroup.ShowDialog(this) == DialogResult.OK)
+                {
+                    LoadData();
+                    this.bndStudyGroups.ResetBindings(false);
+                }
+            }
+        }
+
+        private void btnAddSubject_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (FrmAddSubject frmAddSubject = new FrmAddSubject())
+            {
+                if (frmAddSubject.ShowDialog(this) == DialogResult.OK)
+                {
+                    LoadData();
+                    this.bndSubjects.ResetBindings(false);
+                }
+            }
+        }
+
+        private void btnAddTeacher_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

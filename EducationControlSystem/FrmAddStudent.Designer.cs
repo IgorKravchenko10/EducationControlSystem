@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,9 +42,9 @@
             this.checkBoxIsAbroad = new System.Windows.Forms.CheckBox();
             this.checkBoxOnContract = new System.Windows.Forms.CheckBox();
             this.checkBoxIsLeader = new System.Windows.Forms.CheckBox();
-            this.cmdStudyGroups = new System.Windows.Forms.ComboBox();
+            this.cmbStudyGroups = new System.Windows.Forms.ComboBox();
             this.txtBoxYearEntry = new System.Windows.Forms.TextBox();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -93,32 +94,32 @@
             // 
             // txtBoxName
             // 
-            this.txtBoxName.Location = new System.Drawing.Point(143, 6);
+            this.txtBoxName.Location = new System.Drawing.Point(98, 6);
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(281, 21);
+            this.txtBoxName.Size = new System.Drawing.Size(245, 21);
             this.txtBoxName.TabIndex = 7;
             // 
             // txtBoxPhoneNumber
             // 
-            this.txtBoxPhoneNumber.Location = new System.Drawing.Point(143, 84);
+            this.txtBoxPhoneNumber.Location = new System.Drawing.Point(98, 84);
             this.txtBoxPhoneNumber.Name = "txtBoxPhoneNumber";
-            this.txtBoxPhoneNumber.Size = new System.Drawing.Size(200, 21);
+            this.txtBoxPhoneNumber.Size = new System.Drawing.Size(245, 21);
             this.txtBoxPhoneNumber.TabIndex = 8;
             // 
             // dateTimePickerBirth
             // 
             this.dateTimePickerBirth.CustomFormat = "yyyy/MM/dd";
             this.dateTimePickerBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerBirth.Location = new System.Drawing.Point(143, 32);
+            this.dateTimePickerBirth.Location = new System.Drawing.Point(98, 32);
             this.dateTimePickerBirth.Name = "dateTimePickerBirth";
-            this.dateTimePickerBirth.Size = new System.Drawing.Size(200, 21);
+            this.dateTimePickerBirth.Size = new System.Drawing.Size(245, 21);
             this.dateTimePickerBirth.TabIndex = 9;
             this.dateTimePickerBirth.Value = new System.DateTime(1996, 1, 1, 0, 0, 0, 0);
             // 
             // btnOk
             // 
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOk.Location = new System.Drawing.Point(268, 214);
+            this.btnOk.Location = new System.Drawing.Point(187, 212);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 14;
@@ -129,7 +130,7 @@
             // btnCancel
             // 
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(349, 214);
+            this.btnCancel.Location = new System.Drawing.Point(268, 212);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 15;
@@ -140,7 +141,7 @@
             // checkBoxIsAbroad
             // 
             this.checkBoxIsAbroad.AutoSize = true;
-            this.checkBoxIsAbroad.Location = new System.Drawing.Point(143, 137);
+            this.checkBoxIsAbroad.Location = new System.Drawing.Point(98, 137);
             this.checkBoxIsAbroad.Name = "checkBoxIsAbroad";
             this.checkBoxIsAbroad.Size = new System.Drawing.Size(72, 17);
             this.checkBoxIsAbroad.TabIndex = 16;
@@ -150,7 +151,7 @@
             // checkBoxOnContract
             // 
             this.checkBoxOnContract.AutoSize = true;
-            this.checkBoxOnContract.Location = new System.Drawing.Point(143, 160);
+            this.checkBoxOnContract.Location = new System.Drawing.Point(98, 160);
             this.checkBoxOnContract.Name = "checkBoxOnContract";
             this.checkBoxOnContract.Size = new System.Drawing.Size(83, 17);
             this.checkBoxOnContract.TabIndex = 16;
@@ -160,43 +161,35 @@
             // checkBoxIsLeader
             // 
             this.checkBoxIsLeader.AutoSize = true;
-            this.checkBoxIsLeader.Location = new System.Drawing.Point(143, 183);
+            this.checkBoxIsLeader.Location = new System.Drawing.Point(98, 183);
             this.checkBoxIsLeader.Name = "checkBoxIsLeader";
             this.checkBoxIsLeader.Size = new System.Drawing.Size(142, 17);
             this.checkBoxIsLeader.TabIndex = 16;
             this.checkBoxIsLeader.Text = "Is leader of study group";
             this.checkBoxIsLeader.UseVisualStyleBackColor = true;
             // 
-            // cmdStudyGroups
+            // cmbStudyGroups
             // 
-            this.cmdStudyGroups.FormattingEnabled = true;
-            this.cmdStudyGroups.Location = new System.Drawing.Point(143, 110);
-            this.cmdStudyGroups.Name = "cmdStudyGroups";
-            this.cmdStudyGroups.Size = new System.Drawing.Size(200, 21);
-            this.cmdStudyGroups.TabIndex = 17;
+            this.cmbStudyGroups.FormattingEnabled = true;
+            this.cmbStudyGroups.Location = new System.Drawing.Point(98, 110);
+            this.cmbStudyGroups.Name = "cmbStudyGroups";
+            this.cmbStudyGroups.Size = new System.Drawing.Size(245, 21);
+            this.cmbStudyGroups.TabIndex = 17;
             // 
             // txtBoxYearEntry
             // 
-            this.txtBoxYearEntry.Location = new System.Drawing.Point(143, 58);
+            this.txtBoxYearEntry.Location = new System.Drawing.Point(98, 58);
             this.txtBoxYearEntry.Name = "txtBoxYearEntry";
-            this.txtBoxYearEntry.Size = new System.Drawing.Size(200, 21);
+            this.txtBoxYearEntry.Size = new System.Drawing.Size(245, 21);
             this.txtBoxYearEntry.TabIndex = 18;
-            // 
-            // ribbonStatusBar1
-            // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 241);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = null;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(436, 20);
             // 
             // FrmAddStudent
             // 
-            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(436, 261);
+            this.ClientSize = new System.Drawing.Size(358, 244);
             this.Controls.Add(this.txtBoxYearEntry);
-            this.Controls.Add(this.cmdStudyGroups);
+            this.Controls.Add(this.cmbStudyGroups);
             this.Controls.Add(this.checkBoxIsLeader);
             this.Controls.Add(this.checkBoxOnContract);
             this.Controls.Add(this.checkBoxIsAbroad);
@@ -210,9 +203,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ribbonStatusBar1);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.Name = "FrmAddStudent";
-            this.StatusBar = this.ribbonStatusBar1;
             this.Text = "Adding student";
             this.Load += new System.EventHandler(this.FrmAddStudent_Load);
             this.ResumeLayout(false);
@@ -235,8 +227,8 @@
         private System.Windows.Forms.CheckBox checkBoxIsAbroad;
         private System.Windows.Forms.CheckBox checkBoxOnContract;
         private System.Windows.Forms.CheckBox checkBoxIsLeader;
-        private System.Windows.Forms.ComboBox cmdStudyGroups;
+        private System.Windows.Forms.ComboBox cmbStudyGroups;
         private System.Windows.Forms.TextBox txtBoxYearEntry;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }

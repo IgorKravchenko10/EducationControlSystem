@@ -12,15 +12,6 @@ namespace EducationControlSystem.ProxyClasses
     public class PrxStudyGroup : PrxBaseClass
     {
         public PrxTeacher Teacher { get; set; }
-          
-        public StudyGroup CopyToData()
-        {
-            StudyGroup studyGroup = new StudyGroup()
-            {
-                GroupName = this.Name,
-                StudyGroupId = this.Id,
-            };
-            return studyGroup;
-        }
+        
     }
 }

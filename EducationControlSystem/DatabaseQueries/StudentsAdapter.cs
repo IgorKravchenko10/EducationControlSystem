@@ -9,9 +9,9 @@ namespace EducationControlSystem.DatabaseQueries
 {
     public class StudentsAdapter
     {
-        public static List<PrxStudent> GetStudents(EduContext eduContext)
+        public static List<PrxStudent> GetList(EduContext eduContext)
         {
-            IQueryable<PrxStudent> getStudents = from qr in eduContext.Students
+            IQueryable<PrxStudent> getList = from qr in eduContext.Students
                                                  select new PrxStudent
                                                  {
                                                      Id = qr.StudentId,
@@ -28,7 +28,7 @@ namespace EducationControlSystem.DatabaseQueries
                                                          Name = qr.StudyGroup.GroupName,
                                                      }
                                                  };
-            List<PrxStudent> students = getStudents.ToList();
+            List<PrxStudent> students = getList.ToList();
             return students;
         }
 

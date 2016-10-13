@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace EducationControlSystem
 {
-    public partial class FrmAddStudent : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class FrmAddStudent : DevExpress.XtraEditors.XtraForm
     {
         public FrmAddStudent()
         {
@@ -30,9 +30,9 @@ namespace EducationControlSystem
         {
             List<PrxStudyGroup> studyGroups = StudyGroupsAdapter.GetStudyGroupsBySql();
 
-            cmdStudyGroups.DataSource = studyGroups;
-            cmdStudyGroups.ValueMember = "Id";
-            cmdStudyGroups.DisplayMember = "Name";
+            cmbStudyGroups.DataSource = studyGroups;
+            cmbStudyGroups.ValueMember = "Id";
+            cmbStudyGroups.DisplayMember = "Name";
             
         }
 
@@ -43,10 +43,11 @@ namespace EducationControlSystem
             student.DateOfBirth = dateTimePickerBirth.Value;
             student.YearEntry = Convert.ToInt32(txtBoxYearEntry.Text);
             student.PhoneNumber = txtBoxPhoneNumber.Text;
-            student.StudyGroupId = (int)cmdStudyGroups.SelectedValue;
+            student.StudyGroupId = (int)cmbStudyGroups.SelectedValue;
             student.IsAbroad = checkBoxIsAbroad.Checked;
             student.IsContract = checkBoxOnContract.Checked;
             student.IsLeader = checkBoxIsLeader.Checked;
+
             EduContext educontext = new EduContext();
 
             educontext.Students.Add(student);

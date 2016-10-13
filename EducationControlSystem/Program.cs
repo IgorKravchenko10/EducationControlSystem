@@ -19,7 +19,7 @@ namespace EducationControlSystem
             //System.Data.Entity.Database.SetInitializer(new DropCreateDatabaseAlways<EduContext>());
             //using (var eduContext = new EduContext())
             //{
-              //eduContext.Database.Initialize(force: true);
+            //eduContext.Database.Initialize(force: true);
             //}
 
             Application.EnableVisualStyles();
