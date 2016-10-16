@@ -87,6 +87,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddAdditionalCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddAdditionalCourse.Designer.cs">
+      <DependentUpon>FrmAddAdditionalCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,12 @@
     </Compile>
     <Compile Include="FrmAddSubject.Designer.cs">
       <DependentUpon>FrmAddSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddTeacher.Designer.cs">
+      <DependentUpon>FrmAddTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -127,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddSubject.resx">
       <DependentUpon>FrmAddSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddTeacher.resx">
+      <DependentUpon>FrmAddTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

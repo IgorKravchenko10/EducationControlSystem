@@ -55,8 +55,14 @@
             this.btnAddTeacher = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddSubject = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddAdditionalCourse = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -87,6 +93,8 @@
             this.grvStudyGroups = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndSubjects)).BeginInit();
@@ -103,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bndTeachers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvStudyGroups)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // treeView1
@@ -246,12 +255,18 @@
             this.btnAddStudent,
             this.btnAddTeacher,
             this.btnAddSubject,
-            this.btnAddAdditionalCourse});
+            this.btnAddAdditionalCourse,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4,
+            this.barButtonItem5,
+            this.barButtonItem6});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.MaxItemId = 8;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
+            this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
             this.ribbonControl1.Size = new System.Drawing.Size(1590, 143);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
@@ -284,7 +299,7 @@
             // 
             // btnAddSubject
             // 
-            this.btnAddSubject.Caption = "Новий предмет";
+            this.btnAddSubject.Caption = "Нова дисципліна";
             this.btnAddSubject.Glyph = ((System.Drawing.Image)(resources.GetObject("btnAddSubject.Glyph")));
             this.btnAddSubject.Id = 5;
             this.btnAddSubject.Name = "btnAddSubject";
@@ -298,13 +313,56 @@
             this.btnAddAdditionalCourse.Id = 6;
             this.btnAddAdditionalCourse.Name = "btnAddAdditionalCourse";
             this.btnAddAdditionalCourse.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnAddAdditionalCourse.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddAdditionalCourse_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Список групи";
+            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
+            this.barButtonItem2.Id = 1;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText)));
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Результати екзаменів";
+            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
+            this.barButtonItem3.Id = 2;
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.ActAsDropDown = true;
+            this.barButtonItem4.Caption = "Студенти за кордоном";
+            this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
+            this.barButtonItem4.Id = 3;
+            this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Устигаючі студенти";
+            this.barButtonItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.Glyph")));
+            this.barButtonItem5.Id = 6;
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem6
+            // 
+            this.barButtonItem6.Caption = "Неустигаючі студенти";
+            this.barButtonItem6.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.Glyph")));
+            this.barButtonItem6.Id = 7;
+            this.barButtonItem6.Name = "barButtonItem6";
+            this.barButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Додавання";
+            this.ribbonPage1.Text = "База даних";
             // 
             // ribbonPageGroup1
             // 
@@ -315,6 +373,16 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnAddAdditionalCourse);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Додати";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Запити і звіти";
             // 
             // ribbonStatusBar1
             // 
@@ -595,6 +663,11 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
+            // popupMenu1
+            // 
+            this.popupMenu1.Name = "popupMenu1";
+            this.popupMenu1.Ribbon = this.ribbonControl1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -638,6 +711,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bndTeachers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvStudyGroups)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -702,6 +776,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn teacherDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn studyCourseDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bndAdditionalCourses;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }
 

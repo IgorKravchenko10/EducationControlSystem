@@ -146,8 +146,7 @@ namespace EducationControlSystem
 
         private void NewStudentMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAddStudent frmAddStudent = new FrmAddStudent();
-            frmAddStudent.Show();
+            AddStudent();
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -208,16 +207,21 @@ namespace EducationControlSystem
             this.grvAdditionalCourse.Visible = (dataGridView == this.grvAdditionalCourse);
         }
 
-        private void btnAddStudent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        public void AddStudent()
         {
             using (FrmAddStudent frmAddStudent = new FrmAddStudent())
             {
                 if (frmAddStudent.ShowDialog(this) == DialogResult.OK)
                 {
-                    LoadData();
+                    LoadStudents();
                     this.bndStudents.ResetBindings(false);
                 }
             }
+        }
+
+        private void btnAddStudent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            AddStudent();
         }
 
         private void btnAddStudyGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -226,7 +230,7 @@ namespace EducationControlSystem
             {
                 if (frmAddstudyGroup.ShowDialog(this) == DialogResult.OK)
                 {
-                    LoadData();
+                    LoadStudyGroups();
                     this.bndStudyGroups.ResetBindings(false);
                 }
             }
@@ -238,13 +242,25 @@ namespace EducationControlSystem
             {
                 if (frmAddSubject.ShowDialog(this) == DialogResult.OK)
                 {
-                    LoadData();
+                    LoadSubjects();
                     this.bndSubjects.ResetBindings(false);
                 }
             }
         }
 
         private void btnAddTeacher_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (FrmAddTeacher frmAddTeacher = new FrmAddTeacher())
+            {
+                if (frmAddTeacher.ShowDialog(this) == DialogResult.OK)
+                {
+                    LoadTeachers();
+                    this.bndTeachers.ResetBindings(false);
+                }
+            }
+        }
+
+        private void btnAddAdditionalCourse_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }
