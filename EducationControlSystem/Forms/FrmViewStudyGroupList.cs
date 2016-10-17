@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace EducationControlSystem
+namespace EducationControlSystem.Forms
 {
-    public partial class FrmAddAdditionalCourse : Form
+    public partial class FrmViewStudyGroupList : Form
     {
-        public FrmAddAdditionalCourse()
+        public FrmViewStudyGroupList()
         {
             InitializeComponent();
         }

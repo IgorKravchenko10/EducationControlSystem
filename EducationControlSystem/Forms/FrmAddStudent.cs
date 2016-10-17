@@ -38,15 +38,17 @@ namespace EducationControlSystem
 
         public void AddToDatabase()
         {
-            Student student = new Student();
-            student.StudentName = txtBoxName.Text;
-            student.DateOfBirth = dateTimePickerBirth.Value;
-            student.YearEntry = Convert.ToInt32(txtBoxYearEntry.Text);
-            student.PhoneNumber = txtBoxPhoneNumber.Text;
-            student.StudyGroupId = (int)cmbStudyGroups.SelectedValue;
-            student.IsAbroad = checkBoxIsAbroad.Checked;
-            student.IsContract = checkBoxOnContract.Checked;
-            student.IsLeader = checkBoxIsLeader.Checked;
+            Student student = new Student()
+            {
+                StudentName = txtBoxName.Text,
+                DateOfBirth = dateTimePickerBirth.Value,
+                YearEntry = Convert.ToInt32(txtBoxYearEntry.Text),
+                PhoneNumber = txtBoxPhoneNumber.Text,
+                StudyGroupId = (int)cmbStudyGroups.SelectedValue,
+                IsAbroad = checkBoxIsAbroad.Checked,
+                IsContract = checkBoxOnContract.Checked,
+                IsLeader = checkBoxIsLeader.Checked
+            };
 
             EduContext educontext = new EduContext();
 

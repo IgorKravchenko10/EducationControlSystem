@@ -16,7 +16,18 @@ namespace EducationControlSystem.DatabaseQueries
                                                                    {
                                                                        AdditionalCourseId = qr.AdditionalCourseId,
                                                                        AdditionalCourseName = qr.AdditionalCourseName,
-                                                                       StudyCourse = qr.StudyCourse
+                                                                       StudyCourse = qr.StudyCourse,
+                                                                       Subject = new PrxSubject
+                                                                       {
+                                                                           Id = qr.SubjectId,
+                                                                           Name = qr.Subject.SubjectName
+                                                                       },
+                                                                       Teacher = new PrxTeacher
+                                                                       {
+                                                                           Id = qr.TeacherId,
+                                                                           Name = qr.Teacher.TeacherName,
+                                                                           PhoneNumber = qr.Teacher.Phone
+                                                                       }
                                                                    };
             List<PrxAdditionalCourse> additionalCourses = getAdditionalCourses.ToList();
             return additionalCourses;

@@ -24,7 +24,6 @@ namespace EducationControlSystem
         private void Form1_Load(object sender, EventArgs e)
         {
             FillTree();
-            LoadData();
 
         }
 
@@ -100,7 +99,7 @@ namespace EducationControlSystem
 
         public void LoadSubjects()
         {
-            List<PrxSubject> subjects = DatabaseQueries.SubjectsAdapter.GetSubjects(EduContext);
+            List<PrxSubject> subjects = DatabaseQueries.SubjectsAdapter.GetList(EduContext);
             bndSubjects.DataSource = subjects;
         }
 
@@ -122,12 +121,7 @@ namespace EducationControlSystem
             bndAdditionalCourses.DataSource = additionalCourses;
 
         }
-        public void LoadData()
-        {
-            
-
-        }
-
+        
         private ContextMenu _NodeStudentContextMenu;
         /// <summary>
         /// Создаём контекстное меню для узлов задач
@@ -262,7 +256,18 @@ namespace EducationControlSystem
 
         private void btnAddAdditionalCourse_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            using (FrmAddAdditionalCourse frmAddAdditionaCourse = new FrmAddAdditionalCourse())
+            {
+                if (frmAddAdditionaCourse.ShowDialog(this) == DialogResult.OK)
+                {
+                    LoadAdditionalCourses();
+                    this.bndAdditionalCourses.ResetBindings(false);
+                }
+            }
+        }
 
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
         }
     }
 }

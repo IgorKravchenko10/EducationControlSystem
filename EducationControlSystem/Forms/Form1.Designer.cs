@@ -75,13 +75,13 @@
             this.grvStudents = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudyGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.YearEntry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isAbroadDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.isContractDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.IsLeader = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.StudyGroupName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grvTeachers = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,8 +93,6 @@
             this.grvStudyGroups = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndSubjects)).BeginInit();
@@ -111,7 +109,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bndTeachers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvStudyGroups)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // treeView1
@@ -322,6 +319,7 @@
             this.barButtonItem2.Id = 1;
             this.barButtonItem2.Name = "barButtonItem2";
             this.barButtonItem2.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText)));
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -333,7 +331,6 @@
             // 
             // barButtonItem4
             // 
-            this.barButtonItem4.ActAsDropDown = true;
             this.barButtonItem4.Caption = "Студенти за кордоном";
             this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
             this.barButtonItem4.Id = 3;
@@ -475,13 +472,13 @@
             this.grvStudents.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
+            this.StudyGroupName,
             this.phoneNumberDataGridViewTextBoxColumn,
             this.dateOfBirthDataGridViewTextBoxColumn,
             this.YearEntry,
             this.isAbroadDataGridViewCheckBoxColumn,
             this.isContractDataGridViewCheckBoxColumn,
-            this.IsLeader,
-            this.StudyGroupName});
+            this.IsLeader});
             this.grvStudents.DataSource = this.bndStudents;
             this.grvStudents.Location = new System.Drawing.Point(5, 6);
             this.grvStudents.Name = "grvStudents";
@@ -502,6 +499,13 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Ім\'я";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // StudyGroupName
+            // 
+            this.StudyGroupName.DataPropertyName = "StudyGroup.Name";
+            this.StudyGroupName.HeaderText = "Група";
+            this.StudyGroupName.Name = "StudyGroupName";
+            this.StudyGroupName.ReadOnly = true;
             // 
             // phoneNumberDataGridViewTextBoxColumn
             // 
@@ -544,13 +548,6 @@
             this.IsLeader.HeaderText = "Староста";
             this.IsLeader.Name = "IsLeader";
             this.IsLeader.ReadOnly = true;
-            // 
-            // StudyGroupName
-            // 
-            this.StudyGroupName.DataPropertyName = "StudyGroup.Name";
-            this.StudyGroupName.HeaderText = "Група";
-            this.StudyGroupName.Name = "StudyGroupName";
-            this.StudyGroupName.ReadOnly = true;
             // 
             // grvTeachers
             // 
@@ -663,11 +660,6 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // popupMenu1
-            // 
-            this.popupMenu1.Name = "popupMenu1";
-            this.popupMenu1.Ribbon = this.ribbonControl1;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -711,7 +703,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bndTeachers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvStudyGroups)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -749,15 +740,6 @@
         private DevExpress.XtraBars.BarButtonItem btnAddSubject;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.DataGridView grvStudents;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn YearEntry;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isAbroadDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isContractDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsLeader;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudyGroupName;
         private System.Windows.Forms.DataGridView grvStudyGroups;
         private System.Windows.Forms.DataGridView grvTeachers;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
@@ -782,8 +764,15 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.PopupMenu popupMenu1;
-        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudyGroupName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn YearEntry;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isAbroadDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isContractDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsLeader;
     }
 }
 

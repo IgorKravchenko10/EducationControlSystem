@@ -17,5 +17,7 @@ namespace EducationControlSystem.ProxyClasses
         public int StudyCourse { get; set; }
 
         public PrxTeacher Teacher { get; set; }
+
+        public PrxSubject Subject { get; set; }
     }
 }

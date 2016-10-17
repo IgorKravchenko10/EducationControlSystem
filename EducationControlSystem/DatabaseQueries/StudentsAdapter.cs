@@ -12,57 +12,72 @@ namespace EducationControlSystem.DatabaseQueries
         public static List<PrxStudent> GetList(EduContext eduContext)
         {
             IQueryable<PrxStudent> getList = from qr in eduContext.Students
-                                                 select new PrxStudent
+                                             select new PrxStudent
+                                             {
+                                                 Id = qr.StudentId,
+                                                 Name = qr.StudentName,
+                                                 DateOfBirth = qr.DateOfBirth,
+                                                 YearEntry = qr.YearEntry,
+                                                 IsAbroad = qr.IsAbroad,
+                                                 PhoneNumber = qr.PhoneNumber,
+                                                 IsContract = qr.IsContract,
+                                                 IsLeader = qr.IsLeader,
+                                                 StudyGroup = new PrxStudyGroup
                                                  {
-                                                     Id = qr.StudentId,
-                                                     Name = qr.StudentName,
-                                                     DateOfBirth = qr.DateOfBirth,
-                                                     YearEntry = qr.YearEntry,
-                                                     IsAbroad = qr.IsAbroad,
-                                                     PhoneNumber = qr.PhoneNumber,
-                                                     IsContract = qr.IsContract,
-                                                     IsLeader = qr.IsLeader,
-                                                     StudyGroup = new PrxStudyGroup
-                                                     {
-                                                         Id = qr.StudyGroup.StudyGroupId,
-                                                         Name = qr.StudyGroup.GroupName,
-                                                     }
-                                                 };
+                                                     Id = qr.StudyGroup.StudyGroupId,
+                                                     Name = qr.StudyGroup.GroupName,
+                                                 }
+                                             };
             List<PrxStudent> students = getList.ToList();
             return students;
         }
 
-    public static List<PrxStudent> GetListByGroup(EduContext eduContext, int studyGroupId)
-    {
-        IQueryable<PrxStudent> getList = from qr in eduContext.Students
-                                         where studyGroupId == qr.StudyGroupId
-                                         select new PrxStudent
-                                         {
-                                             Id = qr.StudentId,
-                                             Name = qr.StudentName,
-                                             DateOfBirth = qr.DateOfBirth,
-                                             YearEntry = qr.YearEntry,
-                                             IsAbroad = qr.IsAbroad,
-                                             PhoneNumber = qr.PhoneNumber,
-                                             IsContract = qr.IsContract,
-                                         };
-        List<PrxStudent> studentsList = getList.ToList();
-        return studentsList;
-    }
-
-    public static List<PrxStudent> GetStudentsBySql()
-    {
-        List<PrxStudent> prxStudents = new List<PrxStudent>();
-
-        using (var eduContext = new EduContext())
+        public static List<PrxStudent> GetListByGroup(EduContext eduContext, int studyGroupId)
         {
-            var students = eduContext.Students.SqlQuery("select * from dbo.Students").ToList();
-            foreach (var item in students)
-            {
-                prxStudents.Add(item.CopyToProxy());
-            }
+            IQueryable<PrxStudent> getList = from qr in eduContext.Students
+                                             where studyGroupId == qr.StudyGroupId
+                                             select new PrxStudent
+                                             {
+                                                 Id = qr.StudentId,
+                                                 Name = qr.StudentName,
+                                                 DateOfBirth = qr.DateOfBirth,
+                                                 YearEntry = qr.YearEntry,
+                                                 IsAbroad = qr.IsAbroad,
+                                                 PhoneNumber = qr.PhoneNumber,
+                                                 IsContract = qr.IsContract,
+                                             };
+            List<PrxStudent> studentsList = getList.ToList();
+            return studentsList;
         }
-        return prxStudents;
+
+        public static List<PrxStudent> GetListByGroup(string studyGroupName)
+        {
+            List<PrxStudent> prxStudents = new List<PrxStudent>();
+
+            using (EduContext eduContext=new EduContext())
+            {
+                var students = eduContext.Students.SqlQuery("select dbo.Students.StudentName, dbo.StudyGroups.GroupName from dbo.Students Inner Join dbo.StudyGroups ON dbo.Students.StudyGroupId = dbo.StudyGroups.StudyGroupId Where (dbo.StudyGroups.GroupName=N'{0}')", studyGroupName).ToList();
+                foreach (var item in students)
+                {
+                    prxStudents.Add(item.CopyToProxy());
+                }
+            }
+            return prxStudents;
+        }
+
+        public static List<PrxStudent> GetStudentsBySql()
+        {
+            List<PrxStudent> prxStudents = new List<PrxStudent>();
+
+            using (var eduContext = new EduContext())
+            {
+                var students = eduContext.Students.SqlQuery("select * from dbo.Students").ToList();
+                foreach (var item in students)
+                {
+                    prxStudents.Add(item.CopyToProxy());
+                }
+            }
+            return prxStudents;
+        }
     }
-}
 }

@@ -81,41 +81,47 @@
     <Compile Include="DataObjects\SubjectMark.cs" />
     <Compile Include="DataObjects\Teacher.cs" />
     <Compile Include="Context\EduContext.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddAdditionalCourse.cs">
+    <Compile Include="Forms\FrmAddAdditionalCourse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddAdditionalCourse.Designer.cs">
+    <Compile Include="Forms\FrmAddAdditionalCourse.Designer.cs">
       <DependentUpon>FrmAddAdditionalCourse.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddStudent.cs">
+    <Compile Include="Forms\FrmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddStudent.Designer.cs">
+    <Compile Include="Forms\FrmAddStudent.Designer.cs">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddStudyGroup.cs">
+    <Compile Include="Forms\FrmAddStudyGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddStudyGroup.Designer.cs">
+    <Compile Include="Forms\FrmAddStudyGroup.Designer.cs">
       <DependentUpon>FrmAddStudyGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddSubject.cs">
+    <Compile Include="Forms\FrmAddSubject.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddSubject.Designer.cs">
+    <Compile Include="Forms\FrmAddSubject.Designer.cs">
       <DependentUpon>FrmAddSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAddTeacher.cs">
+    <Compile Include="Forms\FrmAddTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddTeacher.Designer.cs">
+    <Compile Include="Forms\FrmAddTeacher.Designer.cs">
       <DependentUpon>FrmAddTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmViewStudyGroupList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmViewStudyGroupList.Designer.cs">
+      <DependentUpon>FrmViewStudyGroupList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,20 +134,26 @@
     <Compile Include="ProxyClasses\PrxSubject.cs" />
     <Compile Include="ProxyClasses\PrxSubjectMark.cs" />
     <Compile Include="ProxyClasses\PrxTeacher.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddStudent.resx">
+    <EmbeddedResource Include="Forms\FrmAddAdditionalCourse.resx">
+      <DependentUpon>FrmAddAdditionalCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAddStudent.resx">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddStudyGroup.resx">
+    <EmbeddedResource Include="Forms\FrmAddStudyGroup.resx">
       <DependentUpon>FrmAddStudyGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddSubject.resx">
+    <EmbeddedResource Include="Forms\FrmAddSubject.resx">
       <DependentUpon>FrmAddSubject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAddTeacher.resx">
+    <EmbeddedResource Include="Forms\FrmAddTeacher.resx">
       <DependentUpon>FrmAddTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmViewStudyGroupList.resx">
+      <DependentUpon>FrmViewStudyGroupList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

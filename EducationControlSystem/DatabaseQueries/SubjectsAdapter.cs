@@ -9,7 +9,7 @@ namespace EducationControlSystem.DatabaseQueries
 {
     public class SubjectsAdapter
     {
-        public static List<PrxSubject> GetSubjects(EduContext eduContext)
+        public static List<PrxSubject> GetList(EduContext eduContext)
         {
             IQueryable<PrxSubject> getSubjects = from qr in eduContext.Subjects
                                                  select new PrxSubject
