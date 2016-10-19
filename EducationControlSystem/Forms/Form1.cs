@@ -1,4 +1,5 @@
 ﻿using EducationControlSystem.DataObjects;
+using EducationControlSystem.Forms;
 using EducationControlSystem.ProxyClasses;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,8 @@ namespace EducationControlSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'listOfGroup._ListOfGroup' table. You can move, or remove it, as needed.
+            // TODO: This line of code loads data into the '_EducationControlSystem_mdfDataSet1.ListOfGroup' table. You can move, or remove it, as needed.
             FillTree();
 
         }
@@ -33,7 +36,8 @@ namespace EducationControlSystem
             Subjects,
             Teachers,
             StudyGroups,
-            AdditionalCourses
+            AdditionalCourses,
+            SubjectMarks
         }
 
         private class GroupTreeNode
@@ -89,39 +93,64 @@ namespace EducationControlSystem
                 GroupTreeNodeType = GroupTreeNodeTypeEnum.AdditionalCourses
             };
             additionalCoursesTreeNode.Tag = groupTreeNode;
+
+            TreeNode subjectMarksTreeNode = new TreeNode("Оцінки");
+            rootTreeNode.Nodes.Add(subjectMarksTreeNode);
+            groupTreeNode = new GroupTreeNode()
+            {
+                GroupTreeNodeType = GroupTreeNodeTypeEnum.SubjectMarks
+            };
+            subjectMarksTreeNode.Tag = groupTreeNode;
         }
 
-        public void LoadStudents()
+        private void LoadStudents()
         {
             List<PrxStudent> students = DatabaseQueries.StudentsAdapter.GetList(EduContext);
             bndStudents.DataSource = students;
         }
 
-        public void LoadSubjects()
+        private void LoadSubjects()
         {
             List<PrxSubject> subjects = DatabaseQueries.SubjectsAdapter.GetList(EduContext);
             bndSubjects.DataSource = subjects;
         }
 
-        public void LoadStudyGroups()
+        private void LoadStudyGroups()
         {
             List<PrxStudyGroup> studyGroups = DatabaseQueries.StudyGroupsAdapter.GetList(EduContext);
             bndStudyGroups.DataSource = studyGroups;
         }
 
-        public void LoadTeachers()
+        private void LoadTeachers()
         {
             List<PrxTeacher> teachers = DatabaseQueries.TeacherAdapter.GetList(EduContext);
             bndTeachers.DataSource = teachers;
         }
 
-        public void LoadAdditionalCourses()
+        private void LoadAdditionalCourses()
         {
             List<PrxAdditionalCourse> additionalCourses = DatabaseQueries.AdditionalCoursesAdapter.GetAdditionalCourses(EduContext);
             bndAdditionalCourses.DataSource = additionalCourses;
-
         }
-        
+
+        private void LoadSubjectMarks()
+        {
+            List<PrxSubjectMark> subjectMarks = DatabaseQueries.SubjectMarksAdapter.GetList(EduContext);
+            bndSubjectMarks.DataSource = subjectMarks;
+        }
+
+        private void LoadStudentsByStudyGroup(int studyGroupId)
+        {
+            List<PrxStudent> students = DatabaseQueries.StudentsAdapter.GetListByGroup(EduContext, studyGroupId);
+            bndStudents.DataSource = students;
+        }
+
+        private void LoadStudentsByIsAbroad()
+        {
+            List<PrxStudent> students = DatabaseQueries.StudentsAdapter.GetListByIsAbroad(EduContext);
+            bndStudents.DataSource = students;
+        }
+
         private ContextMenu _NodeStudentContextMenu;
         /// <summary>
         /// Создаём контекстное меню для узлов задач
@@ -182,6 +211,11 @@ namespace EducationControlSystem
                         LoadAdditionalCourses();
                         this.bndAdditionalCourses.ResetBindings(false);
                         break;
+                    case GroupTreeNodeTypeEnum.SubjectMarks:
+                        SetGridVisible(this.grvSubjectMarks);
+                        LoadSubjectMarks();
+                        this.bndSubjectMarks.ResetBindings(false);
+                        break;
                 }
             }
         }
@@ -193,12 +227,14 @@ namespace EducationControlSystem
             this.grvSubjects.Dock = DockStyle.Fill;
             this.grvTeachers.Dock = DockStyle.Fill;
             this.grvAdditionalCourse.Dock = DockStyle.Fill;
+            this.grvSubjectMarks.Dock = DockStyle.Fill;
 
             this.grvStudents.Visible = (dataGridView == this.grvStudents);
             this.grvStudyGroups.Visible = (dataGridView == this.grvStudyGroups);
             this.grvSubjects.Visible = (dataGridView == this.grvSubjects);
             this.grvTeachers.Visible = (dataGridView == this.grvTeachers);
             this.grvAdditionalCourse.Visible = (dataGridView == this.grvAdditionalCourse);
+            this.grvSubjectMarks.Visible = (dataGridView == this.grvSubjectMarks);
         }
 
         public void AddStudent()
@@ -266,8 +302,41 @@ namespace EducationControlSystem
             }
         }
 
+        private void btnAddSubjectMark_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (FrmAddSubjectMark frmAddSubjectMark= new FrmAddSubjectMark())
+            {
+                if (frmAddSubjectMark.ShowDialog(this) == DialogResult.OK)
+                {
+                    LoadSubjectMarks();
+                    this.bndSubjectMarks.ResetBindings(false);
+                }
+            }
+        }
+
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            int studyGroupId = new int();
+
+            using (FrmViewStudyGroupList frmViewStudyGroupList=new FrmViewStudyGroupList())
+            {
+                if (frmViewStudyGroupList.ShowDialog(this) == DialogResult.OK)
+                {
+                    studyGroupId = frmViewStudyGroupList.StudyGroupId;
+                }
+            }
+            LoadStudentsByStudyGroup(studyGroupId);
+
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadStudentsByIsAbroad();
+        }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

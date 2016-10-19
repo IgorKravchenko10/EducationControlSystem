@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="_EducationControlSystem_mdfDataSet1" targetNamespace="http://tempuri.org/_EducationControlSystem_mdfDataSet1.xsd" xmlns:mstns="http://tempuri.org/_EducationControlSystem_mdfDataSet1.xsd" xmlns="http://tempuri.org/_EducationControlSystem_mdfDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="EducationControlSystem_mdfConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="EducationControlSystem_mdfConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.EducationControlSystem.Properties.Settings.GlobalReference.Default.EducationControlSystem_mdfConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListOfGroupTableAdapter" GeneratorDataComponentClassName="ListOfGroupTableAdapter" Name="ListOfGroup" UserDataComponentName="ListOfGroupTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="EducationControlSystem_mdfConnectionString (Settings)" DbObjectName="[EducationControlSystem.mdf].dbo.ListOfGroup" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT GroupName, StudentId, StudentName, DateOfBirth, YearEntry, PhoneNumber, IsAbroad, IsContract, IsLeader, StudyGroupId FROM dbo.ListOfGroup</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="GroupName" DataSetColumn="GroupName" />
+              <Mapping SourceColumn="StudentId" DataSetColumn="StudentId" />
+              <Mapping SourceColumn="StudentName" DataSetColumn="StudentName" />
+              <Mapping SourceColumn="DateOfBirth" DataSetColumn="DateOfBirth" />
+              <Mapping SourceColumn="YearEntry" DataSetColumn="YearEntry" />
+              <Mapping SourceColumn="PhoneNumber" DataSetColumn="PhoneNumber" />
+              <Mapping SourceColumn="IsAbroad" DataSetColumn="IsAbroad" />
+              <Mapping SourceColumn="IsContract" DataSetColumn="IsContract" />
+              <Mapping SourceColumn="IsLeader" DataSetColumn="IsLeader" />
+              <Mapping SourceColumn="StudyGroupId" DataSetColumn="StudyGroupId" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="_EducationControlSystem_mdfDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_EducationControlSystem_mdfDataSet1" msprop:Generator_UserDSName="_EducationControlSystem_mdfDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ListOfGroup" msprop:Generator_TableClassName="ListOfGroupDataTable" msprop:Generator_TableVarName="tableListOfGroup" msprop:Generator_TablePropName="ListOfGroup" msprop:Generator_RowDeletingName="ListOfGroupRowDeleting" msprop:Generator_RowChangingName="ListOfGroupRowChanging" msprop:Generator_RowEvHandlerName="ListOfGroupRowChangeEventHandler" msprop:Generator_RowDeletedName="ListOfGroupRowDeleted" msprop:Generator_UserTableName="ListOfGroup" msprop:Generator_RowChangedName="ListOfGroupRowChanged" msprop:Generator_RowEvArgName="ListOfGroupRowChangeEvent" msprop:Generator_RowClassName="ListOfGroupRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="GroupName" msprop:Generator_ColumnVarNameInTable="columnGroupName" msprop:Generator_ColumnPropNameInRow="GroupName" msprop:Generator_ColumnPropNameInTable="GroupNameColumn" msprop:Generator_UserColumnName="GroupName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StudentId" msprop:Generator_ColumnVarNameInTable="columnStudentId" msprop:Generator_ColumnPropNameInRow="StudentId" msprop:Generator_ColumnPropNameInTable="StudentIdColumn" msprop:Generator_UserColumnName="StudentId" type="xs:int" />
+              <xs:element name="StudentName" msprop:Generator_ColumnVarNameInTable="columnStudentName" msprop:Generator_ColumnPropNameInRow="StudentName" msprop:Generator_ColumnPropNameInTable="StudentNameColumn" msprop:Generator_UserColumnName="StudentName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateOfBirth" msprop:Generator_ColumnVarNameInTable="columnDateOfBirth" msprop:Generator_ColumnPropNameInRow="DateOfBirth" msprop:Generator_ColumnPropNameInTable="DateOfBirthColumn" msprop:Generator_UserColumnName="DateOfBirth" type="xs:dateTime" />
+              <xs:element name="YearEntry" msprop:Generator_ColumnVarNameInTable="columnYearEntry" msprop:Generator_ColumnPropNameInRow="YearEntry" msprop:Generator_ColumnPropNameInTable="YearEntryColumn" msprop:Generator_UserColumnName="YearEntry" type="xs:int" />
+              <xs:element name="PhoneNumber" msprop:Generator_ColumnVarNameInTable="columnPhoneNumber" msprop:Generator_ColumnPropNameInRow="PhoneNumber" msprop:Generator_ColumnPropNameInTable="PhoneNumberColumn" msprop:Generator_UserColumnName="PhoneNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsAbroad" msprop:Generator_ColumnVarNameInTable="columnIsAbroad" msprop:Generator_ColumnPropNameInRow="IsAbroad" msprop:Generator_ColumnPropNameInTable="IsAbroadColumn" msprop:Generator_UserColumnName="IsAbroad" type="xs:boolean" />
+              <xs:element name="IsContract" msprop:Generator_ColumnVarNameInTable="columnIsContract" msprop:Generator_ColumnPropNameInRow="IsContract" msprop:Generator_ColumnPropNameInTable="IsContractColumn" msprop:Generator_UserColumnName="IsContract" type="xs:boolean" />
+              <xs:element name="IsLeader" msprop:Generator_ColumnVarNameInTable="columnIsLeader" msprop:Generator_ColumnPropNameInRow="IsLeader" msprop:Generator_ColumnPropNameInTable="IsLeaderColumn" msprop:Generator_UserColumnName="IsLeader" type="xs:boolean" />
+              <xs:element name="StudyGroupId" msprop:Generator_ColumnVarNameInTable="columnStudyGroupId" msprop:Generator_ColumnPropNameInRow="StudyGroupId" msprop:Generator_ColumnPropNameInTable="StudyGroupIdColumn" msprop:Generator_UserColumnName="StudyGroupId" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ListOfGroup" />
+      <xs:field xpath="mstns:StudentId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

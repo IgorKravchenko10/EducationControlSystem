@@ -26,7 +26,8 @@ namespace EducationControlSystem.DatabaseQueries
                                                  {
                                                      Id = qr.StudyGroup.StudyGroupId,
                                                      Name = qr.StudyGroup.GroupName,
-                                                 }
+                                                 },
+                                                 StudyGroupName=qr.StudyGroup.GroupName
                                              };
             List<PrxStudent> students = getList.ToList();
             return students;
@@ -45,9 +46,31 @@ namespace EducationControlSystem.DatabaseQueries
                                                  IsAbroad = qr.IsAbroad,
                                                  PhoneNumber = qr.PhoneNumber,
                                                  IsContract = qr.IsContract,
+                                                 StudyGroupName = qr.StudyGroup.GroupName,
+                                                 IsLeader=qr.IsLeader,
                                              };
-            List<PrxStudent> studentsList = getList.ToList();
-            return studentsList;
+            List<PrxStudent> students = getList.ToList();
+            return students;
+        }
+
+        public static List<PrxStudent> GetListByIsAbroad(EduContext eduContext)
+        {
+            IQueryable<PrxStudent> getList = from qr in eduContext.Students
+                                             where qr.IsAbroad == true
+                                             select new PrxStudent
+                                             {
+                                                 Id = qr.StudentId,
+                                                 Name = qr.StudentName,
+                                                 DateOfBirth = qr.DateOfBirth,
+                                                 YearEntry = qr.YearEntry,
+                                                 IsAbroad = qr.IsAbroad,
+                                                 PhoneNumber = qr.PhoneNumber,
+                                                 IsContract = qr.IsContract,
+                                                 StudyGroupName = qr.StudyGroup.GroupName,
+                                                 IsLeader = qr.IsLeader
+                                             };
+            List<PrxStudent> students = getList.ToList();
+            return students;
         }
 
         public static List<PrxStudent> GetListByGroup(string studyGroupName)
@@ -65,7 +88,7 @@ namespace EducationControlSystem.DatabaseQueries
             return prxStudents;
         }
 
-        public static List<PrxStudent> GetStudentsBySql()
+        public static List<PrxStudent> GetListBySql()
         {
             List<PrxStudent> prxStudents = new List<PrxStudent>();
 

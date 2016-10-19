@@ -103,7 +103,7 @@
             this.Controls.Add(this.txtBoxName);
             this.Controls.Add(this.label1);
             this.Name = "FrmAddStudyGroup";
-            this.Text = "FrmAddStudyGroup";
+            this.Text = "Нова група";
             this.Load += new System.EventHandler(this.FrmAddStudyGroup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

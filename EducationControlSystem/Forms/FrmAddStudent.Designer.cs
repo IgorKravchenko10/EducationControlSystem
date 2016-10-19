@@ -40,11 +40,11 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.checkBoxIsAbroad = new System.Windows.Forms.CheckBox();
-            this.checkBoxOnContract = new System.Windows.Forms.CheckBox();
-            this.checkBoxIsLeader = new System.Windows.Forms.CheckBox();
             this.cmbStudyGroups = new System.Windows.Forms.ComboBox();
             this.txtBoxYearEntry = new System.Windows.Forms.TextBox();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.checkBoxOnContract = new System.Windows.Forms.CheckBox();
+            this.checkBoxIsLeader = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -52,67 +52,67 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Name:";
+            this.label1.Text = "Ім\'я:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Date of birth:";
+            this.label2.Text = "Дата народження:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 61);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Year entry:";
+            this.label3.Text = "Рік вступу:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 87);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.Size = new System.Drawing.Size(91, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Phone number:";
+            this.label4.Text = "Номер телефону";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.Size = new System.Drawing.Size(98, 13);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Study group:";
+            this.label5.Text = "Навчальна група:";
             // 
             // txtBoxName
             // 
-            this.txtBoxName.Location = new System.Drawing.Point(98, 6);
+            this.txtBoxName.Location = new System.Drawing.Point(121, 4);
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(245, 21);
+            this.txtBoxName.Size = new System.Drawing.Size(225, 21);
             this.txtBoxName.TabIndex = 7;
             // 
             // txtBoxPhoneNumber
             // 
-            this.txtBoxPhoneNumber.Location = new System.Drawing.Point(98, 84);
+            this.txtBoxPhoneNumber.Location = new System.Drawing.Point(121, 82);
             this.txtBoxPhoneNumber.Name = "txtBoxPhoneNumber";
-            this.txtBoxPhoneNumber.Size = new System.Drawing.Size(245, 21);
+            this.txtBoxPhoneNumber.Size = new System.Drawing.Size(225, 21);
             this.txtBoxPhoneNumber.TabIndex = 8;
             // 
             // dateTimePickerBirth
             // 
             this.dateTimePickerBirth.CustomFormat = "yyyy/MM/dd";
             this.dateTimePickerBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerBirth.Location = new System.Drawing.Point(98, 32);
+            this.dateTimePickerBirth.Location = new System.Drawing.Point(121, 30);
             this.dateTimePickerBirth.Name = "dateTimePickerBirth";
-            this.dateTimePickerBirth.Size = new System.Drawing.Size(245, 21);
+            this.dateTimePickerBirth.Size = new System.Drawing.Size(225, 21);
             this.dateTimePickerBirth.TabIndex = 9;
             this.dateTimePickerBirth.Value = new System.DateTime(1996, 1, 1, 0, 0, 0, 0);
             // 
@@ -141,17 +141,32 @@
             // checkBoxIsAbroad
             // 
             this.checkBoxIsAbroad.AutoSize = true;
-            this.checkBoxIsAbroad.Location = new System.Drawing.Point(98, 137);
+            this.checkBoxIsAbroad.Location = new System.Drawing.Point(121, 135);
             this.checkBoxIsAbroad.Name = "checkBoxIsAbroad";
             this.checkBoxIsAbroad.Size = new System.Drawing.Size(72, 17);
             this.checkBoxIsAbroad.TabIndex = 16;
             this.checkBoxIsAbroad.Text = "Is abroad";
             this.checkBoxIsAbroad.UseVisualStyleBackColor = true;
             // 
+            // cmbStudyGroups
+            // 
+            this.cmbStudyGroups.FormattingEnabled = true;
+            this.cmbStudyGroups.Location = new System.Drawing.Point(121, 108);
+            this.cmbStudyGroups.Name = "cmbStudyGroups";
+            this.cmbStudyGroups.Size = new System.Drawing.Size(225, 21);
+            this.cmbStudyGroups.TabIndex = 17;
+            // 
+            // txtBoxYearEntry
+            // 
+            this.txtBoxYearEntry.Location = new System.Drawing.Point(121, 56);
+            this.txtBoxYearEntry.Name = "txtBoxYearEntry";
+            this.txtBoxYearEntry.Size = new System.Drawing.Size(225, 21);
+            this.txtBoxYearEntry.TabIndex = 18;
+            // 
             // checkBoxOnContract
             // 
             this.checkBoxOnContract.AutoSize = true;
-            this.checkBoxOnContract.Location = new System.Drawing.Point(98, 160);
+            this.checkBoxOnContract.Location = new System.Drawing.Point(121, 158);
             this.checkBoxOnContract.Name = "checkBoxOnContract";
             this.checkBoxOnContract.Size = new System.Drawing.Size(83, 17);
             this.checkBoxOnContract.TabIndex = 16;
@@ -161,27 +176,12 @@
             // checkBoxIsLeader
             // 
             this.checkBoxIsLeader.AutoSize = true;
-            this.checkBoxIsLeader.Location = new System.Drawing.Point(98, 183);
+            this.checkBoxIsLeader.Location = new System.Drawing.Point(121, 181);
             this.checkBoxIsLeader.Name = "checkBoxIsLeader";
             this.checkBoxIsLeader.Size = new System.Drawing.Size(142, 17);
             this.checkBoxIsLeader.TabIndex = 16;
             this.checkBoxIsLeader.Text = "Is leader of study group";
             this.checkBoxIsLeader.UseVisualStyleBackColor = true;
-            // 
-            // cmbStudyGroups
-            // 
-            this.cmbStudyGroups.FormattingEnabled = true;
-            this.cmbStudyGroups.Location = new System.Drawing.Point(98, 110);
-            this.cmbStudyGroups.Name = "cmbStudyGroups";
-            this.cmbStudyGroups.Size = new System.Drawing.Size(245, 21);
-            this.cmbStudyGroups.TabIndex = 17;
-            // 
-            // txtBoxYearEntry
-            // 
-            this.txtBoxYearEntry.Location = new System.Drawing.Point(98, 58);
-            this.txtBoxYearEntry.Name = "txtBoxYearEntry";
-            this.txtBoxYearEntry.Size = new System.Drawing.Size(245, 21);
-            this.txtBoxYearEntry.TabIndex = 18;
             // 
             // FrmAddStudent
             // 
@@ -225,10 +225,10 @@
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.CheckBox checkBoxIsAbroad;
-        private System.Windows.Forms.CheckBox checkBoxOnContract;
-        private System.Windows.Forms.CheckBox checkBoxIsLeader;
         private System.Windows.Forms.ComboBox cmbStudyGroups;
         private System.Windows.Forms.TextBox txtBoxYearEntry;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private System.Windows.Forms.CheckBox checkBoxOnContract;
+        private System.Windows.Forms.CheckBox checkBoxIsLeader;
     }
 }

@@ -25,7 +25,7 @@ namespace EducationControlSystem
             FillComboBox();
         }
 
-        public void FillComboBox()
+        private void FillComboBox()
         {
             EduContext eduContext = new EduContext();
             List<PrxTeacher> teachers = DatabaseQueries.TeacherAdapter.GetList(eduContext);
@@ -35,7 +35,7 @@ namespace EducationControlSystem
             cmbTeachers.DisplayMember = "Name";
         }
 
-        public void AddToDatabase()
+        private void AddToDatabase()
         {
             StudyGroup studyGroup = new StudyGroup()
             {

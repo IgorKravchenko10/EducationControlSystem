@@ -82,7 +82,7 @@
             this.Controls.Add(this.txtBoxName);
             this.Controls.Add(this.label1);
             this.Name = "FrmAddSubject";
-            this.Text = "FrmAddSubject";
+            this.Text = "Новий предмет";
             this.ResumeLayout(false);
             this.PerformLayout();
 

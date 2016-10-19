@@ -51,6 +51,7 @@
             this.btnCancel.TabIndex = 20;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnOk
             // 
@@ -61,6 +62,7 @@
             this.btnOk.TabIndex = 19;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // label5
             // 
@@ -82,6 +84,7 @@
             this.Controls.Add(this.label5);
             this.Name = "FrmViewStudyGroupList";
             this.Text = "Список групи";
+            this.Load += new System.EventHandler(this.FrmViewStudyGroupList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

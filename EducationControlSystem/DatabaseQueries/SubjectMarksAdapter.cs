@@ -10,7 +10,7 @@ namespace EducationControlSystem.DatabaseQueries
 {
     public class SubjectMarksAdapter
     {
-        public static List<PrxSubjectMark> GetSubjectMarksByGroup(EduContext eduContext, PrxStudyGroup studyGroup)
+        public static List<PrxSubjectMark> GetListByGroup(EduContext eduContext, PrxStudyGroup studyGroup)
         {
 
             IQueryable <PrxSubjectMark> getSubjectMarks = from qr in eduContext.SubjectMarks
@@ -30,7 +30,7 @@ namespace EducationControlSystem.DatabaseQueries
             return subjectMarks;
         }
 
-        public static List<PrxSubjectMark> GetSubjectMarks(EduContext eduContext)
+        public static List<PrxSubjectMark> GetList(EduContext eduContext)
         {
             IQueryable<PrxSubjectMark> getSubjectMarks = from qr in eduContext.SubjectMarks
                                                          select new PrxSubjectMark
@@ -39,7 +39,9 @@ namespace EducationControlSystem.DatabaseQueries
                                                              Semester = qr.Semester,
                                                              Mark = qr.Mark,
                                                              State = (SubjectState)qr.State,
-                                                             IsExam = qr.IsExam
+                                                             IsExam = qr.IsExam,
+                                                             StudentName=qr.Student.StudentName,
+                                                             SubjectName=qr.Subject.SubjectName,
                                                          };
             List<PrxSubjectMark> subjectMarks = getSubjectMarks.ToList();
             return subjectMarks;

@@ -22,12 +22,14 @@ namespace EducationControlSystem.DatabaseQueries
                                                                            Id = qr.SubjectId,
                                                                            Name = qr.Subject.SubjectName
                                                                        },
+                                                                       SubjectName=qr.Subject.SubjectName,
                                                                        Teacher = new PrxTeacher
                                                                        {
                                                                            Id = qr.TeacherId,
                                                                            Name = qr.Teacher.TeacherName,
                                                                            PhoneNumber = qr.Teacher.Phone
-                                                                       }
+                                                                       },
+                                                                       TeacherName=qr.Teacher.TeacherName
                                                                    };
             List<PrxAdditionalCourse> additionalCourses = getAdditionalCourses.ToList();
             return additionalCourses;

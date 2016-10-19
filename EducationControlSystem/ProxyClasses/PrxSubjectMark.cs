@@ -24,5 +24,9 @@ namespace EducationControlSystem.ProxyClasses
 
         public SubjectState State { get; set; }
 
+        public string StudentName { get; set; }
+
+        public string SubjectName { get; set; }
+
     }
 }

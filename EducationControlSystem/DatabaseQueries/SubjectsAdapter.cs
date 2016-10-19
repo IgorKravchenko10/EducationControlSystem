@@ -20,5 +20,20 @@ namespace EducationControlSystem.DatabaseQueries
             List<PrxSubject> subjects = getSubjects.ToList();
             return subjects;
         }
+
+        public static List<PrxSubject> GetListBySql()
+        {
+            List<PrxSubject> prxSubjects = new List<PrxSubject>();
+
+            using (var eduContext = new EduContext())
+            {
+                var subjects = eduContext.Subjects.SqlQuery("select * from dbo.Subjects").ToList();
+                foreach (var item in subjects)
+                {
+                    prxSubjects.Add(item.CopyToProxy());
+                }
+            }
+            return prxSubjects;
+        }
     }
 }

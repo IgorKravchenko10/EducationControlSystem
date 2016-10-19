@@ -33,7 +33,6 @@ namespace EducationControlSystem
             cmbStudyGroups.DataSource = studyGroups;
             cmbStudyGroups.ValueMember = "Id";
             cmbStudyGroups.DisplayMember = "Name";
-            
         }
 
         public void AddToDatabase()
@@ -55,8 +54,6 @@ namespace EducationControlSystem
             educontext.Students.Add(student);
             educontext.SaveChanges();
         }
-
-        
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

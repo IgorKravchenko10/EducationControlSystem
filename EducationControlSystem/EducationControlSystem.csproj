@@ -111,6 +111,12 @@
     <Compile Include="Forms\FrmAddSubject.Designer.cs">
       <DependentUpon>FrmAddSubject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmAddSubjectMark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAddSubjectMark.Designer.cs">
+      <DependentUpon>FrmAddSubjectMark.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmAddTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,17 +129,31 @@
     <Compile Include="Forms\FrmViewStudyGroupList.Designer.cs">
       <DependentUpon>FrmViewStudyGroupList.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListOfGroup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListOfGroup.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProxyClasses\PrxAdditionalCourse.cs" />
     <Compile Include="ProxyClasses\PrxBaseClass.cs" />
     <Compile Include="ProxyClasses\PrxPerson.cs" />
     <Compile Include="ProxyClasses\PrxStudent.cs" />
-    <Compile Include="ProxyClasses\PrxStudentSubject.cs" />
     <Compile Include="ProxyClasses\PrxStudyGroup.cs" />
     <Compile Include="ProxyClasses\PrxSubject.cs" />
     <Compile Include="ProxyClasses\PrxSubjectMark.cs" />
     <Compile Include="ProxyClasses\PrxTeacher.cs" />
+    <Compile Include="_EducationControlSystem_mdfDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_EducationControlSystem_mdfDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_EducationControlSystem_mdfDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_EducationControlSystem_mdfDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -148,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAddSubject.resx">
       <DependentUpon>FrmAddSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAddSubjectMark.resx">
+      <DependentUpon>FrmAddSubjectMark.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAddTeacher.resx">
       <DependentUpon>FrmAddTeacher.cs</DependentUpon>
@@ -165,12 +188,24 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ListOfGroup.xsc">
+      <DependentUpon>ListOfGroup.xsd</DependentUpon>
+    </None>
+    <None Include="ListOfGroup.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ListOfGroup.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ListOfGroup.xss">
+      <DependentUpon>ListOfGroup.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\EducationControlSystem.DataObjects.StudyGroup.datasource" />
     <None Include="Properties\DataSources\EducationControlSystem.ProxyClasses.PrxAdditionalCourse.datasource" />
     <None Include="Properties\DataSources\EducationControlSystem.ProxyClasses.PrxStudent.datasource" />
     <None Include="Properties\DataSources\EducationControlSystem.ProxyClasses.PrxStudyGroup.datasource" />
     <None Include="Properties\DataSources\EducationControlSystem.ProxyClasses.PrxSubject.datasource" />
+    <None Include="Properties\DataSources\EducationControlSystem.ProxyClasses.PrxSubjectMark.datasource" />
     <None Include="Properties\DataSources\EducationControlSystem.ProxyClasses.PrxTeacher.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -181,11 +216,35 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_EducationControlSystem_mdfDataSet.xsc">
+      <DependentUpon>_EducationControlSystem_mdfDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_EducationControlSystem_mdfDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_EducationControlSystem_mdfDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_EducationControlSystem_mdfDataSet.xss">
+      <DependentUpon>_EducationControlSystem_mdfDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_EducationControlSystem_mdfDataSet1.xsc">
+      <DependentUpon>_EducationControlSystem_mdfDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_EducationControlSystem_mdfDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_EducationControlSystem_mdfDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_EducationControlSystem_mdfDataSet1.xss">
+      <DependentUpon>_EducationControlSystem_mdfDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

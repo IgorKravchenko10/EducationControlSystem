@@ -34,5 +34,7 @@ namespace EducationControlSystem.ProxyClasses
 
         public PrxStudyGroup StudyGroup { get; set; }
 
+        public string StudyGroupName { get; set; }
+
     }
 }
