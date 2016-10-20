@@ -23,7 +23,7 @@ namespace EducationControlSystem
         private void FrmAddStudent_Load(object sender, EventArgs e)
         {
             FillComboBox();
-            
+
         }
 
         public void FillComboBox()
@@ -62,15 +62,8 @@ namespace EducationControlSystem
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            try
-            {
-                AddToDatabase();
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Будь ласка, заповніть усі поля", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            AddToDatabase();
+            this.Close();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace EducationControlSystem.DatabaseQueries
                                                      Id = qr.StudyGroup.StudyGroupId,
                                                      Name = qr.StudyGroup.GroupName,
                                                  },
-                                                 StudyGroupName=qr.StudyGroup.GroupName
+                                                 StudyGroupName = qr.StudyGroup.GroupName
                                              };
             List<PrxStudent> students = getList.ToList();
             return students;
@@ -47,7 +47,7 @@ namespace EducationControlSystem.DatabaseQueries
                                                  PhoneNumber = qr.PhoneNumber,
                                                  IsContract = qr.IsContract,
                                                  StudyGroupName = qr.StudyGroup.GroupName,
-                                                 IsLeader=qr.IsLeader,
+                                                 IsLeader = qr.IsLeader,
                                              };
             List<PrxStudent> students = getList.ToList();
             return students;
@@ -73,20 +73,21 @@ namespace EducationControlSystem.DatabaseQueries
             return students;
         }
 
-        public static List<PrxStudent> GetListByGroup(string studyGroupName)
+        public static List<PrxStudent> GetListBySubjectState()
         {
             List<PrxStudent> prxStudents = new List<PrxStudent>();
 
             using (EduContext eduContext=new EduContext())
             {
-                var students = eduContext.Students.SqlQuery("select dbo.Students.StudentName, dbo.StudyGroups.GroupName from dbo.Students Inner Join dbo.StudyGroups ON dbo.Students.StudyGroupId = dbo.StudyGroups.StudyGroupId Where (dbo.StudyGroups.GroupName=N'{0}')", studyGroupName).ToList();
-                foreach (var item in students)
+                var students = eduContext.Students.SqlQuery("select distinct dbo.Students.* from dbo.Students Inner Join dbo.SubjectMarks ON dbo.Students.StudentId = dbo.SubjectMarks.StudentId WHERE(dbo.SubjectMarks.State = 1) OR (dbo.SubjectMarks.State = 0)").ToList();
+
+                foreach(var item in students)
                 {
                     prxStudents.Add(item.CopyToProxy());
                 }
             }
             return prxStudents;
-        }
+        }        
 
         public static List<PrxStudent> GetListBySql()
         {

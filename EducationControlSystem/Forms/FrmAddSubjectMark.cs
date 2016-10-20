@@ -52,7 +52,7 @@ namespace EducationControlSystem.Forms
         {
             SubjectMark subjectMark = new SubjectMark()
             {
-                Mark = Convert.ToInt32(txtBoxMark.Text),
+                Mark = (int)numericUpDown2.Value,
                 StudentId = (int)cmbStudent.SelectedValue,
                 SubjectId = (int)cmbSubject.SelectedValue,
                 State = (int)cmbState.SelectedValue,

@@ -9,12 +9,12 @@ namespace EducationControlSystem.ProxyClasses
 {
     public enum SubjectState : int
     {
-        InProcessing = 0,
-        Completed = 1,
-        Retaking = 2
+        Вивчається = 0,
+        Залік = 1,
+        Переекзаменовка = 2
     }
 
-    public class PrxSubjectMark:PrxBaseClass
+    public class PrxSubjectMark : PrxBaseClass
     {
         public int Mark { get; set; }
 

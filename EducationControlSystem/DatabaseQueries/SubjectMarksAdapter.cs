@@ -13,19 +13,19 @@ namespace EducationControlSystem.DatabaseQueries
         public static List<PrxSubjectMark> GetListByGroup(EduContext eduContext, PrxStudyGroup studyGroup)
         {
 
-            IQueryable <PrxSubjectMark> getSubjectMarks = from qr in eduContext.SubjectMarks
-                                                            join student in eduContext.Students on studyGroup.Id equals student.StudyGroupId
-                                                            join subjectMark in eduContext.SubjectMarks on student.StudentId equals subjectMark.StudentId
-                                                            join subject in eduContext.Subjects on subjectMark.SubjectId equals subject.SubjectId
-                                                            where student.StudyGroupId==studyGroup.Id
-                                                            select new PrxSubjectMark
-                                                            {
-                                                                Id = qr.SubjectMarkId,
-                                                                Semester = qr.Semester,
-                                                                Mark = qr.Mark,
-                                                                State = (SubjectState)qr.State,
-                                                                IsExam = qr.IsExam
-                                                            };
+            IQueryable<PrxSubjectMark> getSubjectMarks = from qr in eduContext.SubjectMarks
+                                                         join student in eduContext.Students on studyGroup.Id equals student.StudyGroupId
+                                                         join subjectMark in eduContext.SubjectMarks on student.StudentId equals subjectMark.StudentId
+                                                         join subject in eduContext.Subjects on subjectMark.SubjectId equals subject.SubjectId
+                                                         where student.StudyGroupId == studyGroup.Id
+                                                         select new PrxSubjectMark
+                                                         {
+                                                             Id = qr.SubjectMarkId,
+                                                             Semester = qr.Semester,
+                                                             Mark = qr.Mark,
+                                                             State = (SubjectState)qr.State,
+                                                             IsExam = qr.IsExam
+                                                         };
             List<PrxSubjectMark> subjectMarks = getSubjectMarks.ToList();
             return subjectMarks;
         }
@@ -40,8 +40,28 @@ namespace EducationControlSystem.DatabaseQueries
                                                              Mark = qr.Mark,
                                                              State = (SubjectState)qr.State,
                                                              IsExam = qr.IsExam,
-                                                             StudentName=qr.Student.StudentName,
-                                                             SubjectName=qr.Subject.SubjectName,
+                                                             StudentName = qr.Student.StudentName,
+                                                             SubjectName = qr.Subject.SubjectName,
+                                                         };
+            List<PrxSubjectMark> subjectMarks = getSubjectMarks.ToList();
+            return subjectMarks;
+        }
+
+        public static List<PrxSubjectMark> GetListBySubject(EduContext eduContext, int subjectId)
+        {
+            IQueryable<PrxSubjectMark> getSubjectMarks = from qr in eduContext.SubjectMarks
+                                                         join subject in eduContext.Subjects on subjectId equals subject.SubjectId
+                                                         join student in eduContext.Students on qr.StudentId equals student.StudentId
+                                                         where qr.SubjectId == subjectId && qr.State == 2
+                                                         select new PrxSubjectMark
+                                                         {
+                                                             Id = qr.SubjectMarkId,
+                                                             Semester = qr.Semester,
+                                                             Mark = qr.Mark,
+                                                             State = (SubjectState)qr.State,
+                                                             IsExam = qr.IsExam,
+                                                             StudentName = qr.Student.StudentName,
+                                                             SubjectName = qr.Subject.SubjectName
                                                          };
             List<PrxSubjectMark> subjectMarks = getSubjectMarks.ToList();
             return subjectMarks;

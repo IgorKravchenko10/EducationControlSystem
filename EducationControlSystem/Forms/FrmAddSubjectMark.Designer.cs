@@ -32,7 +32,6 @@
             this.checkBoxIsExam = new System.Windows.Forms.CheckBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
-            this.txtBoxMark = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,7 +40,9 @@
             this.cmbStudent = new System.Windows.Forms.ComboBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbState
@@ -86,21 +87,14 @@
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // txtBoxMark
-            // 
-            this.txtBoxMark.Location = new System.Drawing.Point(130, 6);
-            this.txtBoxMark.Name = "txtBoxMark";
-            this.txtBoxMark.Size = new System.Drawing.Size(213, 20);
-            this.txtBoxMark.TabIndex = 24;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 89);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 22;
-            this.label5.Text = "Статус:";
+            this.label5.Text = "Стан:";
             // 
             // label4
             // 
@@ -149,7 +143,7 @@
             // 
             this.numericUpDown1.Location = new System.Drawing.Point(130, 113);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(40, 20);
+            this.numericUpDown1.Size = new System.Drawing.Size(52, 20);
             this.numericUpDown1.TabIndex = 37;
             this.numericUpDown1.Value = new decimal(new int[] {
             1,
@@ -166,11 +160,19 @@
             this.label6.TabIndex = 36;
             this.label6.Text = "Семестр:";
             // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(130, 7);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(52, 20);
+            this.numericUpDown2.TabIndex = 38;
+            // 
             // FrmAddSubjectMark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(356, 198);
+            this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cmbStudent);
@@ -179,7 +181,6 @@
             this.Controls.Add(this.checkBoxIsExam);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
-            this.Controls.Add(this.txtBoxMark);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -188,6 +189,7 @@
             this.Text = "Нова оцінка";
             this.Load += new System.EventHandler(this.FrmAddSubjectMark_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,7 +200,6 @@
         private System.Windows.Forms.CheckBox checkBoxIsExam;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.TextBox txtBoxMark;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
@@ -207,5 +208,6 @@
         private System.Windows.Forms.ComboBox cmbStudent;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
     }
 }

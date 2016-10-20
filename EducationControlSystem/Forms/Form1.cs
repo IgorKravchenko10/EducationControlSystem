@@ -24,8 +24,6 @@ namespace EducationControlSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'listOfGroup._ListOfGroup' table. You can move, or remove it, as needed.
-            // TODO: This line of code loads data into the '_EducationControlSystem_mdfDataSet1.ListOfGroup' table. You can move, or remove it, as needed.
             FillTree();
 
         }
@@ -48,13 +46,11 @@ namespace EducationControlSystem
 
         public void FillTree()
         {
-            CreateNodeContextMenu();
 
             TreeNode rootTreeNode = new TreeNode("Education Control System");
             treeView1.Nodes.Add(rootTreeNode);
 
             TreeNode studentsTreeNode = new TreeNode("Студенти");
-            studentsTreeNode.ContextMenu = _NodeStudentContextMenu;
             GroupTreeNode groupTreeNode = new GroupTreeNode()
             {
                 GroupTreeNodeType=GroupTreeNodeTypeEnum.Students
@@ -151,25 +147,16 @@ namespace EducationControlSystem
             bndStudents.DataSource = students;
         }
 
-        private ContextMenu _NodeStudentContextMenu;
-        /// <summary>
-        /// Создаём контекстное меню для узлов задач
-        /// </summary>
-        private void CreateNodeContextMenu()
+        private void LoadStudentsByGoodState()
         {
-            _NodeStudentContextMenu = new ContextMenu();
-
-            MenuItem createMenuItem = new MenuItem("Додати студента");
-            createMenuItem.Click += new EventHandler(NewStudentMenuItem_Click);
-            _NodeStudentContextMenu.MenuItems.Add(createMenuItem);
-
-            MenuItem deleteMenuItem = new MenuItem("Видалити студента");
-            _NodeStudentContextMenu.MenuItems.Add(deleteMenuItem);
+            List<PrxStudent> students = DatabaseQueries.StudentsAdapter.GetListBySubjectState();
+            bndStudents.DataSource = students;
         }
 
-        private void NewStudentMenuItem_Click(object sender, EventArgs e)
+        private void LoadSubjectMarks(int subjectId)
         {
-            AddStudent();
+            List<PrxSubjectMark> subjects = DatabaseQueries.SubjectMarksAdapter.GetListBySubject(EduContext, subjectId);
+            bndSubjectMarks.DataSource = subjects;
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -326,17 +313,39 @@ namespace EducationControlSystem
                 }
             }
             LoadStudentsByStudyGroup(studyGroupId);
+            SetGridVisible(this.grvStudents);
 
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LoadStudentsByIsAbroad();
+            SetGridVisible(this.grvStudents);
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            LoadStudentsByGoodState();
+            SetGridVisible(this.grvStudents);
+        }
 
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int subjectId = new int();
+            using (FrmViewSubjectsList frmViewSubjectsList = new FrmViewSubjectsList())
+            {
+                if (frmViewSubjectsList.ShowDialog(this) == DialogResult.OK)
+                {
+                    subjectId = frmViewSubjectsList.SubjectId;
+                }
+            }
+            LoadSubjectMarks(subjectId);
+            SetGridVisible(this.grvSubjectMarks);
         }
     }
 }

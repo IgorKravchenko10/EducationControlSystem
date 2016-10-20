@@ -129,6 +129,12 @@
     <Compile Include="Forms\FrmViewStudyGroupList.Designer.cs">
       <DependentUpon>FrmViewStudyGroupList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmViewSubjectsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmViewSubjectsList.Designer.cs">
+      <DependentUpon>FrmViewSubjectsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListOfGroup.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmViewStudyGroupList.resx">
       <DependentUpon>FrmViewStudyGroupList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmViewSubjectsList.resx">
+      <DependentUpon>FrmViewSubjectsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
