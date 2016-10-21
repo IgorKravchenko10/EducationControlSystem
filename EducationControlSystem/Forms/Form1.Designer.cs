@@ -57,6 +57,9 @@
             this.btnAddAdditionalCourse = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.btnSubjectMarksStudent = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSubjectMarksGroup = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
@@ -125,6 +128,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -289,9 +293,11 @@
             this.barButtonItem4,
             this.barButtonItem5,
             this.barButtonItem6,
-            this.btnAddSubjectMark});
+            this.btnAddSubjectMark,
+            this.btnSubjectMarksStudent,
+            this.btnSubjectMarksGroup});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 9;
+            this.ribbonControl1.MaxItemId = 16;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -355,12 +361,36 @@
             // 
             // barButtonItem3
             // 
+            this.barButtonItem3.ActAsDropDown = true;
+            this.barButtonItem3.ButtonStyle = DevExpress.XtraBars.BarButtonStyle.DropDown;
             this.barButtonItem3.Caption = "Результати екзаменів";
+            this.barButtonItem3.DropDownControl = this.popupMenu1;
             this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
             this.barButtonItem3.Id = 2;
             this.barButtonItem3.Name = "barButtonItem3";
             this.barButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.ItemLinks.Add(this.btnSubjectMarksStudent);
+            this.popupMenu1.ItemLinks.Add(this.btnSubjectMarksGroup);
+            this.popupMenu1.Name = "popupMenu1";
+            this.popupMenu1.Ribbon = this.ribbonControl1;
+            // 
+            // btnSubjectMarksStudent
+            // 
+            this.btnSubjectMarksStudent.Caption = "Студента";
+            this.btnSubjectMarksStudent.Id = 14;
+            this.btnSubjectMarksStudent.Name = "btnSubjectMarksStudent";
+            this.btnSubjectMarksStudent.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSubjectMarksStudent_ItemClick);
+            // 
+            // btnSubjectMarksGroup
+            // 
+            this.btnSubjectMarksGroup.Caption = "Навчальної групи";
+            this.btnSubjectMarksGroup.Id = 15;
+            this.btnSubjectMarksGroup.Name = "btnSubjectMarksGroup";
+            this.btnSubjectMarksGroup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSubjectMarksGroup_ItemClick);
             // 
             // barButtonItem4
             // 
@@ -943,6 +973,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -1053,6 +1084,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn isAbroadDataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isContractDataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn isLeaderDataGridViewCheckBoxColumn;
+        private DevExpress.XtraBars.PopupMenu popupMenu1;
+        private DevExpress.XtraBars.BarButtonItem btnSubjectMarksStudent;
+        private DevExpress.XtraBars.BarButtonItem btnSubjectMarksGroup;
     }
 }
 

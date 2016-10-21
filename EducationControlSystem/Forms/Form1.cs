@@ -129,11 +129,7 @@ namespace EducationControlSystem
             bndAdditionalCourses.DataSource = additionalCourses;
         }
 
-        private void LoadSubjectMarks()
-        {
-            List<PrxSubjectMark> subjectMarks = DatabaseQueries.SubjectMarksAdapter.GetList(EduContext);
-            bndSubjectMarks.DataSource = subjectMarks;
-        }
+        
 
         private void LoadStudentsByStudyGroup(int studyGroupId)
         {
@@ -153,11 +149,30 @@ namespace EducationControlSystem
             bndStudents.DataSource = students;
         }
 
-        private void LoadSubjectMarks(int subjectId)
+        private void LoadSubjectMarksBySubject(int subjectId)
         {
-            List<PrxSubjectMark> subjects = DatabaseQueries.SubjectMarksAdapter.GetListBySubject(EduContext, subjectId);
-            bndSubjectMarks.DataSource = subjects;
+            List<PrxSubjectMark> subjectMarks = DatabaseQueries.SubjectMarksAdapter.GetListBySubject(EduContext, subjectId);
+            bndSubjectMarks.DataSource = subjectMarks;
         }
+
+        private void LoadSubjectMarksByStudent(int studentId)
+        {
+            List<PrxSubjectMark> subjectMarks = DatabaseQueries.SubjectMarksAdapter.GetListByStudent(EduContext, studentId);
+            bndSubjectMarks.DataSource = subjectMarks;
+        }
+
+        private void LoadSubjectMarks()
+        {
+            List<PrxSubjectMark> subjectMarks = DatabaseQueries.SubjectMarksAdapter.GetList(EduContext);
+            bndSubjectMarks.DataSource = subjectMarks;
+        }
+
+        private void LoadSubjectMarksByStudyGroup(int studyGroupId)
+        {
+            List<PrxSubjectMark> subjectMarks = DatabaseQueries.SubjectMarksAdapter.GetListByGroup(EduContext, studyGroupId);
+            bndSubjectMarks.DataSource = subjectMarks;
+        }
+
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
@@ -344,7 +359,38 @@ namespace EducationControlSystem
                     subjectId = frmViewSubjectsList.SubjectId;
                 }
             }
-            LoadSubjectMarks(subjectId);
+            LoadSubjectMarksBySubject(subjectId);
+            SetGridVisible(this.grvSubjectMarks);
+        }
+
+        private void btnSubjectMarksStudent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int studentId = new int();
+
+            using (FrmViewStudentList frmViewStudentList = new FrmViewStudentList())
+            {
+                if (frmViewStudentList.ShowDialog(this) == DialogResult.OK)
+                {
+                    studentId = frmViewStudentList.StudentId;
+                }
+            }
+            LoadSubjectMarksByStudent(studentId);
+            SetGridVisible(this.grvSubjectMarks);
+        }
+
+
+        private void btnSubjectMarksGroup_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int studyGroupId = new int();
+
+            using (FrmViewStudyGroupList frmViewStudyGroupList = new FrmViewStudyGroupList())
+            {
+                if (frmViewStudyGroupList.ShowDialog(this) == DialogResult.OK)
+                {
+                    studyGroupId = frmViewStudyGroupList.StudyGroupId;
+                }
+            }
+            LoadSubjectMarksByStudyGroup(studyGroupId);
             SetGridVisible(this.grvSubjectMarks);
         }
     }

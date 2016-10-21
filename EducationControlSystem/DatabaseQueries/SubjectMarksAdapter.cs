@@ -10,21 +10,23 @@ namespace EducationControlSystem.DatabaseQueries
 {
     public class SubjectMarksAdapter
     {
-        public static List<PrxSubjectMark> GetListByGroup(EduContext eduContext, PrxStudyGroup studyGroup)
+        public static List<PrxSubjectMark> GetListByGroup(EduContext eduContext, int studyGroupId)
         {
 
             IQueryable<PrxSubjectMark> getSubjectMarks = from qr in eduContext.SubjectMarks
-                                                         join student in eduContext.Students on studyGroup.Id equals student.StudyGroupId
-                                                         join subjectMark in eduContext.SubjectMarks on student.StudentId equals subjectMark.StudentId
-                                                         join subject in eduContext.Subjects on subjectMark.SubjectId equals subject.SubjectId
-                                                         where student.StudyGroupId == studyGroup.Id
+                                                         join student in eduContext.Students on qr.StudentId equals student.StudentId
+                                                         join studyGroup in eduContext.StudyGroups on student.StudyGroupId equals studyGroup.StudyGroupId
+                                                         join subject in eduContext.Subjects on qr.SubjectId equals subject.SubjectId
+                                                         where student.StudyGroupId == studyGroupId
                                                          select new PrxSubjectMark
                                                          {
                                                              Id = qr.SubjectMarkId,
                                                              Semester = qr.Semester,
                                                              Mark = qr.Mark,
                                                              State = (SubjectState)qr.State,
-                                                             IsExam = qr.IsExam
+                                                             IsExam = qr.IsExam,
+                                                             StudentName = qr.Student.StudentName,
+                                                             SubjectName = qr.Subject.SubjectName
                                                          };
             List<PrxSubjectMark> subjectMarks = getSubjectMarks.ToList();
             return subjectMarks;
@@ -67,5 +69,24 @@ namespace EducationControlSystem.DatabaseQueries
             return subjectMarks;
         }
 
+        public static List<PrxSubjectMark> GetListByStudent(EduContext eduContext, int studentId)
+        {
+            IQueryable<PrxSubjectMark> getSubjectMarks = from qr in eduContext.SubjectMarks
+                                                         join student in eduContext.Students on qr.StudentId equals student.StudentId
+                                                         join subject in eduContext.Subjects on qr.SubjectId equals subject.SubjectId
+                                                         where student.StudentId==studentId
+                                                         select new PrxSubjectMark
+                                                         {
+                                                             Id = qr.SubjectMarkId,
+                                                             Semester = qr.Semester,
+                                                             Mark = qr.Mark,
+                                                             State = (SubjectState)qr.State,
+                                                             IsExam = qr.IsExam,
+                                                             StudentName = qr.Student.StudentName,
+                                                             SubjectName = qr.Subject.SubjectName
+                                                         };
+            List<PrxSubjectMark> subjectMarks = getSubjectMarks.ToList();
+            return subjectMarks;
+        }
     }
 }
