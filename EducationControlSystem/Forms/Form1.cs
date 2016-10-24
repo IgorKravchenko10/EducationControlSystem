@@ -25,7 +25,7 @@ namespace EducationControlSystem
         private void Form1_Load(object sender, EventArgs e)
         {
             FillTree();
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private enum GroupTreeNodeTypeEnum

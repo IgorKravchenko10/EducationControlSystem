@@ -88,5 +88,28 @@ namespace EducationControlSystem.DatabaseQueries
             List<PrxSubjectMark> subjectMarks = getSubjectMarks.ToList();
             return subjectMarks;
         }
+
+        public static List<PrxSubjectMark> GetListByAverage(EduContext eduContext, int semester)
+        {
+            var getSubjectMarks = (from qr in eduContext.SubjectMarks
+                                                         join student in eduContext.Students on qr.StudentId equals student.StudentId
+                                                         join subject in eduContext.Subjects on qr.SubjectId equals subject.SubjectId
+                                                         where qr.Semester==semester
+                                                         select new PrxSubjectMark
+                                                         {
+                                                             Id = qr.SubjectMarkId,
+                                                             Semester = qr.Semester,
+                                                             Mark = (int)(from qr in eduContext.SubjectMarks
+                                                                          join student in eduContext.Students on qr.StudentId equals student.StudentId
+                                                                          where qr.Semester==semester
+                                                                          select qr.Mark).Average(),
+                                                             State = (SubjectState)qr.State,
+                                                             IsExam = qr.IsExam,
+                                                             StudentName = qr.Student.StudentName,
+                                                             SubjectName = qr.Subject.SubjectName
+                                                         }).Distinct();
+            List<PrxSubjectMark> subjectMarks = getSubjectMarks.ToList();
+            return subjectMarks;
+        }
     }
 }
