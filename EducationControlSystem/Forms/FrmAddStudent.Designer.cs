@@ -49,6 +49,9 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
@@ -58,6 +61,9 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 36);
             this.label2.Name = "label2";
@@ -67,6 +73,9 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 61);
             this.label3.Name = "label3";
@@ -76,6 +85,9 @@
             // 
             // label4
             // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 87);
             this.label4.Name = "label4";
@@ -85,6 +97,9 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(12, 113);
             this.label5.Name = "label5";
@@ -94,6 +109,9 @@
             // 
             // txtBoxName
             // 
+            this.txtBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxName.Location = new System.Drawing.Point(121, 4);
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(225, 21);
@@ -101,6 +119,9 @@
             // 
             // txtBoxPhoneNumber
             // 
+            this.txtBoxPhoneNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxPhoneNumber.Location = new System.Drawing.Point(121, 82);
             this.txtBoxPhoneNumber.Name = "txtBoxPhoneNumber";
             this.txtBoxPhoneNumber.Size = new System.Drawing.Size(225, 21);
@@ -108,6 +129,9 @@
             // 
             // dateTimePickerBirth
             // 
+            this.dateTimePickerBirth.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePickerBirth.CustomFormat = "yyyy/MM/dd";
             this.dateTimePickerBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerBirth.Location = new System.Drawing.Point(121, 30);
@@ -118,6 +142,9 @@
             // 
             // btnOk
             // 
+            this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOk.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnOk.Location = new System.Drawing.Point(187, 212);
             this.btnOk.Name = "btnOk";
@@ -129,6 +156,9 @@
             // 
             // btnCancel
             // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(268, 212);
             this.btnCancel.Name = "btnCancel";
@@ -140,6 +170,9 @@
             // 
             // checkBoxIsAbroad
             // 
+            this.checkBoxIsAbroad.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxIsAbroad.AutoSize = true;
             this.checkBoxIsAbroad.Location = new System.Drawing.Point(121, 135);
             this.checkBoxIsAbroad.Name = "checkBoxIsAbroad";
@@ -150,6 +183,9 @@
             // 
             // cmbStudyGroups
             // 
+            this.cmbStudyGroups.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbStudyGroups.FormattingEnabled = true;
             this.cmbStudyGroups.Location = new System.Drawing.Point(121, 108);
             this.cmbStudyGroups.Name = "cmbStudyGroups";
@@ -158,6 +194,9 @@
             // 
             // txtBoxYearEntry
             // 
+            this.txtBoxYearEntry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxYearEntry.Location = new System.Drawing.Point(121, 56);
             this.txtBoxYearEntry.Name = "txtBoxYearEntry";
             this.txtBoxYearEntry.Size = new System.Drawing.Size(225, 21);
@@ -165,6 +204,9 @@
             // 
             // checkBoxOnContract
             // 
+            this.checkBoxOnContract.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxOnContract.AutoSize = true;
             this.checkBoxOnContract.Location = new System.Drawing.Point(121, 158);
             this.checkBoxOnContract.Name = "checkBoxOnContract";
@@ -175,6 +217,9 @@
             // 
             // checkBoxIsLeader
             // 
+            this.checkBoxIsLeader.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.checkBoxIsLeader.AutoSize = true;
             this.checkBoxIsLeader.Location = new System.Drawing.Point(121, 181);
             this.checkBoxIsLeader.Name = "checkBoxIsLeader";

@@ -91,25 +91,39 @@ namespace EducationControlSystem.DatabaseQueries
 
         public static List<PrxSubjectMark> GetListByAverage(EduContext eduContext, int semester)
         {
-            var getSubjectMarks = (from qr in eduContext.SubjectMarks
-                                                         join student in eduContext.Students on qr.StudentId equals student.StudentId
-                                                         join subject in eduContext.Subjects on qr.SubjectId equals subject.SubjectId
-                                                         where qr.Semester==semester
-                                                         select new PrxSubjectMark
-                                                         {
-                                                             Id = qr.SubjectMarkId,
-                                                             Semester = qr.Semester,
-                                                             Mark = (int)(from qr in eduContext.SubjectMarks
-                                                                          join student in eduContext.Students on qr.StudentId equals student.StudentId
-                                                                          where qr.Semester==semester
-                                                                          select qr.Mark).Average(),
-                                                             State = (SubjectState)qr.State,
-                                                             IsExam = qr.IsExam,
-                                                             StudentName = qr.Student.StudentName,
-                                                             SubjectName = qr.Subject.SubjectName
-                                                         }).Distinct();
-            List<PrxSubjectMark> subjectMarks = getSubjectMarks.ToList();
-            return subjectMarks;
+            var getSubjectMarks = from SubjectMarks in eduContext.SubjectMarks
+                                  join Students in eduContext.Students on SubjectMarks.StudentId equals Students.StudentId
+                                  join Subjects in eduContext.Subjects on SubjectMarks.SubjectId equals Subjects.SubjectId
+                                  group new { SubjectMarks, Students } by new
+                                  {
+                                      SubjectMarks.Semester,
+                                      Students.StudentName,
+                                      SubjectMarks.StudentId
+                                  } into g
+                                  where g.Key.Semester == semester
+                                  select new
+                                  {
+                                      Expr1 = (double?)g.Average(p => p.SubjectMarks.Mark),
+                                      g.Key.Semester,
+                                      g.Key.StudentName,
+                                      g.Key.StudentId
+                                  };
+            var subjectMarks = getSubjectMarks;
+            List<PrxSubjectMark> newList = new List<PrxSubjectMark>();
+
+            foreach (var item in subjectMarks)
+            {
+                PrxSubjectMark subjectMark = new PrxSubjectMark()
+                {
+                    Mark=(int)item.Expr1,
+                    Semester=item.Semester,
+                    StudentName=item.StudentName
+                };
+                newList.Add(subjectMark);
+            }
+            return newList;
         }
+
+
     }
 }

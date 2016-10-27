@@ -129,6 +129,12 @@
     <Compile Include="Forms\FrmAddTeacher.Designer.cs">
       <DependentUpon>FrmAddTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmSelectSemester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSelectSemester.Designer.cs">
+      <DependentUpon>FrmSelectSemester.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmViewStudentList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,12 @@
     </Compile>
     <Compile Include="Forms\FrmViewStudyGroupList.Designer.cs">
       <DependentUpon>FrmViewStudyGroupList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmViewSubjectsAndTeachersList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmViewSubjectsAndTeachersList.Designer.cs">
+      <DependentUpon>FrmViewSubjectsAndTeachersList.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmViewSubjectsList.cs">
       <SubType>Form</SubType>
@@ -196,11 +208,17 @@
     <EmbeddedResource Include="Forms\FrmAddTeacher.resx">
       <DependentUpon>FrmAddTeacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSelectSemester.resx">
+      <DependentUpon>FrmSelectSemester.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmViewStudentList.resx">
       <DependentUpon>FrmViewStudentList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmViewStudyGroupList.resx">
       <DependentUpon>FrmViewStudyGroupList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmViewSubjectsAndTeachersList.resx">
+      <DependentUpon>FrmViewSubjectsAndTeachersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmViewSubjectsList.resx">
       <DependentUpon>FrmViewSubjectsList.cs</DependentUpon>

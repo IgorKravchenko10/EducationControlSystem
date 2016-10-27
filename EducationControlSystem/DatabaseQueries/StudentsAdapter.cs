@@ -9,6 +9,38 @@ namespace EducationControlSystem.DatabaseQueries
 {
     public class StudentsAdapter
     {
+
+        public static PrxStudent GetItemProxy(EduContext eduContext, int id)
+        {
+            IQueryable<PrxStudent> getItem = from qr in eduContext.Students
+                                             where qr.StudentId == id
+                                             select new PrxStudent
+                                             {
+                                                 Id = qr.StudentId,
+                                                 Name = qr.StudentName,
+                                                 DateOfBirth = qr.DateOfBirth,
+                                                 YearEntry = qr.YearEntry,
+                                                 IsAbroad = qr.IsAbroad,
+                                                 PhoneNumber = qr.PhoneNumber,
+                                                 IsContract = qr.IsContract,
+                                                 IsLeader = qr.IsLeader,
+                                                 StudyGroup = new PrxStudyGroup
+                                                 {
+                                                     Id = qr.StudyGroup.StudyGroupId,
+                                                     Name = qr.StudyGroup.GroupName,
+                                                 },
+                                                 StudyGroupName = qr.StudyGroup.GroupName
+                                             };
+            PrxStudent prxStudent = getItem.FirstOrDefault();
+            return prxStudent;
+        }
+
+        public static DataObjects.Student GetItem(EduContext eduContext, int id)
+        {
+            DataObjects.Student student = (from qr in eduContext.Students where qr.StudentId == id select qr).FirstOrDefault();
+            return student;
+        }
+
         public static List<PrxStudent> GetList(EduContext eduContext)
         {
             IQueryable<PrxStudent> getList = from qr in eduContext.Students

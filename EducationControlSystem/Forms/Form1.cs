@@ -19,7 +19,14 @@ namespace EducationControlSystem
 
         public Form1()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -53,7 +60,7 @@ namespace EducationControlSystem
             TreeNode studentsTreeNode = new TreeNode("Студенти");
             GroupTreeNode groupTreeNode = new GroupTreeNode()
             {
-                GroupTreeNodeType=GroupTreeNodeTypeEnum.Students
+                GroupTreeNodeType = GroupTreeNodeTypeEnum.Students
             };
             rootTreeNode.Nodes.Add(studentsTreeNode);
             studentsTreeNode.Tag = groupTreeNode;
@@ -62,7 +69,7 @@ namespace EducationControlSystem
             rootTreeNode.Nodes.Add(studyGroupsTreeNode);
             groupTreeNode = new GroupTreeNode()
             {
-                GroupTreeNodeType=GroupTreeNodeTypeEnum.StudyGroups
+                GroupTreeNodeType = GroupTreeNodeTypeEnum.StudyGroups
             };
             studyGroupsTreeNode.Tag = groupTreeNode;
 
@@ -129,7 +136,11 @@ namespace EducationControlSystem
             bndAdditionalCourses.DataSource = additionalCourses;
         }
 
-        
+        private void LoadAdditionalCoursesBySubjectAndTeacher(int subjectId, int teacherId)
+        {
+            List<PrxAdditionalCourse> additionalCourses = DatabaseQueries.AdditionalCoursesAdapter.GetAdditionalCoursesBySubjectAndTeacher(EduContext, subjectId, teacherId);
+            bndAdditionalCourses.DataSource = additionalCourses;
+        }
 
         private void LoadStudentsByStudyGroup(int studyGroupId)
         {
@@ -170,6 +181,12 @@ namespace EducationControlSystem
         private void LoadSubjectMarksByStudyGroup(int studyGroupId)
         {
             List<PrxSubjectMark> subjectMarks = DatabaseQueries.SubjectMarksAdapter.GetListByGroup(EduContext, studyGroupId);
+            bndSubjectMarks.DataSource = subjectMarks;
+        }
+
+        private void LoadSubjectMarksByAverage(int semester)
+        {
+            List<PrxSubjectMark> subjectMarks = DatabaseQueries.SubjectMarksAdapter.GetListByAverage(EduContext, semester);
             bndSubjectMarks.DataSource = subjectMarks;
         }
 
@@ -306,7 +323,7 @@ namespace EducationControlSystem
 
         private void btnAddSubjectMark_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            using (FrmAddSubjectMark frmAddSubjectMark= new FrmAddSubjectMark())
+            using (FrmAddSubjectMark frmAddSubjectMark = new FrmAddSubjectMark())
             {
                 if (frmAddSubjectMark.ShowDialog(this) == DialogResult.OK)
                 {
@@ -320,15 +337,16 @@ namespace EducationControlSystem
         {
             int studyGroupId = new int();
 
-            using (FrmViewStudyGroupList frmViewStudyGroupList=new FrmViewStudyGroupList())
+            using (FrmViewStudyGroupList frmViewStudyGroupList = new FrmViewStudyGroupList())
             {
                 if (frmViewStudyGroupList.ShowDialog(this) == DialogResult.OK)
                 {
                     studyGroupId = frmViewStudyGroupList.StudyGroupId;
+                    LoadStudentsByStudyGroup(studyGroupId);
+                    SetGridVisible(this.grvStudents);
                 }
             }
-            LoadStudentsByStudyGroup(studyGroupId);
-            SetGridVisible(this.grvStudents);
+            
 
         }
 
@@ -346,7 +364,13 @@ namespace EducationControlSystem
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
+        }
+
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadStudentsByGoodState();
+            SetGridVisible(this.grvStudents);
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -357,10 +381,11 @@ namespace EducationControlSystem
                 if (frmViewSubjectsList.ShowDialog(this) == DialogResult.OK)
                 {
                     subjectId = frmViewSubjectsList.SubjectId;
+                    LoadSubjectMarksBySubject(subjectId);
+                    SetGridVisible(this.grvSubjectMarks);
                 }
             }
-            LoadSubjectMarksBySubject(subjectId);
-            SetGridVisible(this.grvSubjectMarks);
+            
         }
 
         private void btnSubjectMarksStudent_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -372,10 +397,11 @@ namespace EducationControlSystem
                 if (frmViewStudentList.ShowDialog(this) == DialogResult.OK)
                 {
                     studentId = frmViewStudentList.StudentId;
+                    LoadSubjectMarksByStudent(studentId);
+                    SetGridVisible(this.grvSubjectMarks);
                 }
             }
-            LoadSubjectMarksByStudent(studentId);
-            SetGridVisible(this.grvSubjectMarks);
+            
         }
 
 
@@ -388,10 +414,102 @@ namespace EducationControlSystem
                 if (frmViewStudyGroupList.ShowDialog(this) == DialogResult.OK)
                 {
                     studyGroupId = frmViewStudyGroupList.StudyGroupId;
+                    LoadSubjectMarksByStudyGroup(studyGroupId);
+                    SetGridVisible(this.grvSubjectMarks);
                 }
             }
-            LoadSubjectMarksByStudyGroup(studyGroupId);
-            SetGridVisible(this.grvSubjectMarks);
+            
         }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int semester = new int();
+            using (FrmSelectSemester frmSelectSemester = new FrmSelectSemester())
+            {
+                if (frmSelectSemester.ShowDialog(this) == DialogResult.OK)
+                {
+                    semester = frmSelectSemester.Semester;
+                    LoadSubjectMarksByAverage(semester);
+                    SetGridVisible(this.grvSubjectMarks);
+                }
+            }
+            
+        }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int subjectId = new int();
+            int teacherId = new int();
+
+            using (FrmViewSubjectsAndTeachersList frmViewSubjectsAndTeachersList = new FrmViewSubjectsAndTeachersList())
+            {
+                if (frmViewSubjectsAndTeachersList.ShowDialog(this) == DialogResult.OK)
+                {
+                    subjectId = frmViewSubjectsAndTeachersList.SubjectId;
+                    teacherId = frmViewSubjectsAndTeachersList.TeacherId;
+                    LoadAdditionalCoursesBySubjectAndTeacher(subjectId, teacherId);
+                    SetGridVisible(this.grvAdditionalCourse);
+                }
+            }
+        }
+
+        private void grvStudents_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                PrxStudent prxStudent = (PrxStudent)grvStudents.CurrentRow.DataBoundItem;
+                EditStudent(prxStudent.Id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Arrow;
+            }
+        }
+
+        private void EditStudent(int id)
+        {
+            using (FrmAddStudent frmAddStudent = new FrmAddStudent(id))
+            {
+                if (frmAddStudent.ShowDialog(this) == DialogResult.OK)
+                {
+                    LoadStudents();
+                    SetGridVisible(this.grvStudents);
+                }
+            }
+
+        }
+
+
+        private void grvSubjects_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void grvStudyGroups_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void grvSubjectMarks_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void grvTeachers_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void grvAdditionalCourse_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        
     }
 }

@@ -61,28 +61,16 @@
             this.btnSubjectMarksStudent = new DevExpress.XtraBars.BarButtonItem();
             this.btnSubjectMarksGroup = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.btnAddSubjectMark = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.studentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearEntryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfBirthDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isAbroadDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isContractDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isLeaderDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.listOfGroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.listOfGroup = new EducationControlSystem.ListOfGroup();
             this.grvSubjectMarks = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,7 +108,12 @@
             this.grvStudyGroups = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listOfGroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.listOfGroup = new EducationControlSystem.ListOfGroup();
             this.listOfGroupTableAdapter = new EducationControlSystem.ListOfGroupTableAdapters.ListOfGroupTableAdapter();
+            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndSubjects)).BeginInit();
@@ -131,10 +124,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listOfGroupBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listOfGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjectMarks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndSubjectMarks)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvAdditionalCourse)).BeginInit();
@@ -144,6 +133,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bndTeachers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvStudyGroups)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listOfGroupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listOfGroup)).BeginInit();
             this.SuspendLayout();
             // 
             // treeView1
@@ -291,13 +283,15 @@
             this.barButtonItem2,
             this.barButtonItem3,
             this.barButtonItem4,
-            this.barButtonItem5,
             this.barButtonItem6,
             this.btnAddSubjectMark,
             this.btnSubjectMarksStudent,
-            this.btnSubjectMarksGroup});
+            this.btnSubjectMarksGroup,
+            this.barButtonItem7,
+            this.barButtonItem8,
+            this.barButtonItem9});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 16;
+            this.ribbonControl1.MaxItemId = 19;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -401,15 +395,6 @@
             this.barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
-            // barButtonItem5
-            // 
-            this.barButtonItem5.Caption = "Устигаючі студенти";
-            this.barButtonItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.Glyph")));
-            this.barButtonItem5.Id = 6;
-            this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
-            // 
             // barButtonItem6
             // 
             this.barButtonItem6.Caption = "Неустигаючі студенти";
@@ -428,6 +413,24 @@
             this.btnAddSubjectMark.Name = "btnAddSubjectMark";
             this.btnAddSubjectMark.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.btnAddSubjectMark.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAddSubjectMark_ItemClick);
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "Середній бал";
+            this.barButtonItem7.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.Glyph")));
+            this.barButtonItem7.Id = 16;
+            this.barButtonItem7.Name = "barButtonItem7";
+            this.barButtonItem7.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Розклад факультативів";
+            this.barButtonItem8.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.Glyph")));
+            this.barButtonItem8.Id = 17;
+            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -453,8 +456,10 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Запити і звіти";
             // 
@@ -473,7 +478,6 @@
             // panelControl1
             // 
             this.panelControl1.AutoSize = true;
-            this.panelControl1.Controls.Add(this.dataGridView1);
             this.panelControl1.Controls.Add(this.grvSubjectMarks);
             this.panelControl1.Controls.Add(this.grvAdditionalCourse);
             this.panelControl1.Controls.Add(this.grvStudents);
@@ -485,111 +489,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1348, 725);
             this.panelControl1.TabIndex = 2;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.studentIdDataGridViewTextBoxColumn,
-            this.studentNameDataGridViewTextBoxColumn,
-            this.groupNameDataGridViewTextBoxColumn,
-            this.yearEntryDataGridViewTextBoxColumn,
-            this.dateOfBirthDataGridViewTextBoxColumn1,
-            this.phoneNumberDataGridViewTextBoxColumn2,
-            this.isAbroadDataGridViewCheckBoxColumn1,
-            this.isContractDataGridViewCheckBoxColumn1,
-            this.isLeaderDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.listOfGroupBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(5, 15);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(250, 104);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.Visible = false;
-            // 
-            // studentIdDataGridViewTextBoxColumn
-            // 
-            this.studentIdDataGridViewTextBoxColumn.DataPropertyName = "StudentId";
-            this.studentIdDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.studentIdDataGridViewTextBoxColumn.Name = "studentIdDataGridViewTextBoxColumn";
-            this.studentIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // studentNameDataGridViewTextBoxColumn
-            // 
-            this.studentNameDataGridViewTextBoxColumn.DataPropertyName = "StudentName";
-            this.studentNameDataGridViewTextBoxColumn.HeaderText = "Студент";
-            this.studentNameDataGridViewTextBoxColumn.Name = "studentNameDataGridViewTextBoxColumn";
-            this.studentNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // groupNameDataGridViewTextBoxColumn
-            // 
-            this.groupNameDataGridViewTextBoxColumn.DataPropertyName = "GroupName";
-            this.groupNameDataGridViewTextBoxColumn.HeaderText = "Група";
-            this.groupNameDataGridViewTextBoxColumn.Name = "groupNameDataGridViewTextBoxColumn";
-            this.groupNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // yearEntryDataGridViewTextBoxColumn
-            // 
-            this.yearEntryDataGridViewTextBoxColumn.DataPropertyName = "YearEntry";
-            this.yearEntryDataGridViewTextBoxColumn.HeaderText = "Рік вступу";
-            this.yearEntryDataGridViewTextBoxColumn.Name = "yearEntryDataGridViewTextBoxColumn";
-            this.yearEntryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateOfBirthDataGridViewTextBoxColumn1
-            // 
-            this.dateOfBirthDataGridViewTextBoxColumn1.DataPropertyName = "DateOfBirth";
-            this.dateOfBirthDataGridViewTextBoxColumn1.HeaderText = "Дата народження";
-            this.dateOfBirthDataGridViewTextBoxColumn1.Name = "dateOfBirthDataGridViewTextBoxColumn1";
-            this.dateOfBirthDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn2
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn2.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn2.HeaderText = "Номер телефону";
-            this.phoneNumberDataGridViewTextBoxColumn2.Name = "phoneNumberDataGridViewTextBoxColumn2";
-            this.phoneNumberDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // isAbroadDataGridViewCheckBoxColumn1
-            // 
-            this.isAbroadDataGridViewCheckBoxColumn1.DataPropertyName = "IsAbroad";
-            this.isAbroadDataGridViewCheckBoxColumn1.HeaderText = "За кордоном";
-            this.isAbroadDataGridViewCheckBoxColumn1.Name = "isAbroadDataGridViewCheckBoxColumn1";
-            this.isAbroadDataGridViewCheckBoxColumn1.ReadOnly = true;
-            // 
-            // isContractDataGridViewCheckBoxColumn1
-            // 
-            this.isContractDataGridViewCheckBoxColumn1.DataPropertyName = "IsContract";
-            this.isContractDataGridViewCheckBoxColumn1.HeaderText = "На контракті";
-            this.isContractDataGridViewCheckBoxColumn1.Name = "isContractDataGridViewCheckBoxColumn1";
-            this.isContractDataGridViewCheckBoxColumn1.ReadOnly = true;
-            // 
-            // isLeaderDataGridViewCheckBoxColumn
-            // 
-            this.isLeaderDataGridViewCheckBoxColumn.DataPropertyName = "IsLeader";
-            this.isLeaderDataGridViewCheckBoxColumn.HeaderText = "Староста";
-            this.isLeaderDataGridViewCheckBoxColumn.Name = "isLeaderDataGridViewCheckBoxColumn";
-            this.isLeaderDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // listOfGroupBindingSource
-            // 
-            this.listOfGroupBindingSource.DataMember = "ListOfGroup";
-            this.listOfGroupBindingSource.DataSource = this.bindingSource1;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = this.listOfGroup;
-            this.bindingSource1.Position = 0;
-            // 
-            // listOfGroup
-            // 
-            this.listOfGroup.DataSetName = "ListOfGroup";
-            this.listOfGroup.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grvSubjectMarks
             // 
@@ -614,6 +513,7 @@
             this.grvSubjectMarks.ReadOnly = true;
             this.grvSubjectMarks.Size = new System.Drawing.Size(249, 83);
             this.grvSubjectMarks.TabIndex = 3;
+            this.grvSubjectMarks.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvSubjectMarks_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -689,6 +589,7 @@
             this.grvAdditionalCourse.ReadOnly = true;
             this.grvAdditionalCourse.Size = new System.Drawing.Size(249, 104);
             this.grvAdditionalCourse.TabIndex = 2;
+            this.grvAdditionalCourse.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvAdditionalCourse_CellDoubleClick);
             // 
             // additionalCourseIdDataGridViewTextBoxColumn
             // 
@@ -757,6 +658,7 @@
             this.grvStudents.ReadOnly = true;
             this.grvStudents.Size = new System.Drawing.Size(250, 104);
             this.grvStudents.TabIndex = 0;
+            this.grvStudents.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvStudents_CellDoubleClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -840,6 +742,7 @@
             this.grvTeachers.ReadOnly = true;
             this.grvTeachers.Size = new System.Drawing.Size(249, 83);
             this.grvTeachers.TabIndex = 1;
+            this.grvTeachers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvTeachers_CellDoubleClick);
             // 
             // idDataGridViewTextBoxColumn2
             // 
@@ -886,6 +789,7 @@
             this.grvSubjects.ReadOnly = true;
             this.grvSubjects.Size = new System.Drawing.Size(249, 83);
             this.grvSubjects.TabIndex = 1;
+            this.grvSubjects.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvSubjects_CellDoubleClick);
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -920,6 +824,7 @@
             this.grvStudyGroups.ReadOnly = true;
             this.grvStudyGroups.Size = new System.Drawing.Size(249, 83);
             this.grvStudyGroups.TabIndex = 1;
+            this.grvStudyGroups.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvStudyGroups_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -935,9 +840,42 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
+            // listOfGroupBindingSource
+            // 
+            this.listOfGroupBindingSource.DataMember = "ListOfGroup";
+            this.listOfGroupBindingSource.DataSource = this.bindingSource1;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = this.listOfGroup;
+            this.bindingSource1.Position = 0;
+            // 
+            // listOfGroup
+            // 
+            this.listOfGroup.DataSetName = "ListOfGroup";
+            this.listOfGroup.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // listOfGroupTableAdapter
             // 
             this.listOfGroupTableAdapter.ClearBeforeFill = true;
+            // 
+            // barButtonItem5
+            // 
+            this.barButtonItem5.Caption = "Устигаючі студенти";
+            this.barButtonItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.Glyph")));
+            this.barButtonItem5.Id = 6;
+            this.barButtonItem5.Name = "barButtonItem5";
+            this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Устигаючі студенти";
+            this.barButtonItem9.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.Glyph")));
+            this.barButtonItem9.Id = 18;
+            this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
             // 
             // Form1
             // 
@@ -976,10 +914,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listOfGroupBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listOfGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjectMarks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndSubjectMarks)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvAdditionalCourse)).EndInit();
@@ -989,6 +923,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bndTeachers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvSubjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grvStudyGroups)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listOfGroupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listOfGroup)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1038,7 +975,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
@@ -1070,23 +1006,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bindingSource1;
         private ListOfGroup listOfGroup;
         private System.Windows.Forms.BindingSource listOfGroupBindingSource;
         private ListOfGroupTableAdapters.ListOfGroupTableAdapter listOfGroupTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn groupNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearEntryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isAbroadDataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isContractDataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isLeaderDataGridViewCheckBoxColumn;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraBars.BarButtonItem btnSubjectMarksStudent;
         private DevExpress.XtraBars.BarButtonItem btnSubjectMarksGroup;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
     }
 }
 
