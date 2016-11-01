@@ -30,6 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.bndStudyGroups = new System.Windows.Forms.BindingSource(this.components);
             this.bndStudents = new System.Windows.Forms.BindingSource(this.components);
@@ -65,6 +71,7 @@
             this.btnAddSubjectMark = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -113,7 +120,7 @@
             this.listOfGroup = new EducationControlSystem.ListOfGroup();
             this.listOfGroupTableAdapter = new EducationControlSystem.ListOfGroupTableAdapters.ListOfGroupTableAdapter();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bndStudyGroups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndStudents)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bndSubjects)).BeginInit();
@@ -141,9 +148,9 @@
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.treeView1.Location = new System.Drawing.Point(0, 143);
+            this.treeView1.Location = new System.Drawing.Point(0, 146);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(242, 725);
+            this.treeView1.Size = new System.Drawing.Size(242, 732);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -173,14 +180,14 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1590, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1598, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 899);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1590, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1598, 0);
             // 
             // barDockControlLeft
             // 
@@ -193,7 +200,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1590, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1598, 0);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 899);
             // 
             // tabFormDefaultManager2
@@ -210,14 +217,14 @@
             this.barDockControl1.CausesValidation = false;
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl1.Size = new System.Drawing.Size(1590, 0);
+            this.barDockControl1.Size = new System.Drawing.Size(1598, 0);
             // 
             // barDockControl2
             // 
             this.barDockControl2.CausesValidation = false;
             this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControl2.Location = new System.Drawing.Point(0, 899);
-            this.barDockControl2.Size = new System.Drawing.Size(1590, 0);
+            this.barDockControl2.Size = new System.Drawing.Size(1598, 0);
             // 
             // barDockControl3
             // 
@@ -230,7 +237,7 @@
             // 
             this.barDockControl4.CausesValidation = false;
             this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(1590, 0);
+            this.barDockControl4.Location = new System.Drawing.Point(1598, 0);
             this.barDockControl4.Size = new System.Drawing.Size(0, 899);
             // 
             // tabFormDefaultManager3
@@ -247,14 +254,14 @@
             this.barDockControl5.CausesValidation = false;
             this.barDockControl5.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl5.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl5.Size = new System.Drawing.Size(1590, 0);
+            this.barDockControl5.Size = new System.Drawing.Size(1598, 0);
             // 
             // barDockControl6
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControl6.Location = new System.Drawing.Point(0, 899);
-            this.barDockControl6.Size = new System.Drawing.Size(1590, 0);
+            this.barDockControl6.Size = new System.Drawing.Size(1598, 0);
             // 
             // barDockControl7
             // 
@@ -267,7 +274,7 @@
             // 
             this.barDockControl8.CausesValidation = false;
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl8.Location = new System.Drawing.Point(1590, 0);
+            this.barDockControl8.Location = new System.Drawing.Point(1598, 0);
             this.barDockControl8.Size = new System.Drawing.Size(0, 899);
             // 
             // ribbonControl1
@@ -296,7 +303,7 @@
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2013;
-            this.ribbonControl1.Size = new System.Drawing.Size(1590, 143);
+            this.ribbonControl1.Size = new System.Drawing.Size(1598, 146);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // btnAddStudyGroup
@@ -432,6 +439,15 @@
             this.barButtonItem8.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "Устигаючі студенти";
+            this.barButtonItem9.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.Glyph")));
+            this.barButtonItem9.Id = 18;
+            this.barButtonItem9.Name = "barButtonItem9";
+            this.barButtonItem9.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -465,10 +481,10 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 868);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 878);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1590, 31);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1598, 21);
             // 
             // barButtonItem1
             // 
@@ -485,9 +501,9 @@
             this.panelControl1.Controls.Add(this.grvSubjects);
             this.panelControl1.Controls.Add(this.grvStudyGroups);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(242, 143);
+            this.panelControl1.Location = new System.Drawing.Point(242, 146);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1348, 725);
+            this.panelControl1.Size = new System.Drawing.Size(1356, 732);
             this.panelControl1.TabIndex = 2;
             // 
             // grvSubjectMarks
@@ -508,10 +524,18 @@
             this.State,
             this.IsExam});
             this.grvSubjectMarks.DataSource = this.bndSubjectMarks;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvSubjectMarks.DefaultCellStyle = dataGridViewCellStyle1;
             this.grvSubjectMarks.Location = new System.Drawing.Point(274, 205);
             this.grvSubjectMarks.Name = "grvSubjectMarks";
             this.grvSubjectMarks.ReadOnly = true;
-            this.grvSubjectMarks.Size = new System.Drawing.Size(249, 83);
+            this.grvSubjectMarks.Size = new System.Drawing.Size(257, 90);
             this.grvSubjectMarks.TabIndex = 3;
             this.grvSubjectMarks.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvSubjectMarks_CellDoubleClick);
             // 
@@ -584,10 +608,18 @@
             this.SubjectName,
             this.studyCourseDataGridViewTextBoxColumn});
             this.grvAdditionalCourse.DataSource = this.bndAdditionalCourses;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvAdditionalCourse.DefaultCellStyle = dataGridViewCellStyle2;
             this.grvAdditionalCourse.Location = new System.Drawing.Point(560, 205);
             this.grvAdditionalCourse.Name = "grvAdditionalCourse";
             this.grvAdditionalCourse.ReadOnly = true;
-            this.grvAdditionalCourse.Size = new System.Drawing.Size(249, 104);
+            this.grvAdditionalCourse.Size = new System.Drawing.Size(257, 111);
             this.grvAdditionalCourse.TabIndex = 2;
             this.grvAdditionalCourse.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvAdditionalCourse_CellDoubleClick);
             // 
@@ -653,10 +685,18 @@
             this.isContractDataGridViewCheckBoxColumn,
             this.IsLeader});
             this.grvStudents.DataSource = this.bndStudents;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvStudents.DefaultCellStyle = dataGridViewCellStyle3;
             this.grvStudents.Location = new System.Drawing.Point(6, 318);
             this.grvStudents.Name = "grvStudents";
             this.grvStudents.ReadOnly = true;
-            this.grvStudents.Size = new System.Drawing.Size(250, 104);
+            this.grvStudents.Size = new System.Drawing.Size(258, 111);
             this.grvStudents.TabIndex = 0;
             this.grvStudents.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvStudents_CellDoubleClick);
             // 
@@ -737,10 +777,18 @@
             this.nameDataGridViewTextBoxColumn2,
             this.phoneNumberDataGridViewTextBoxColumn1});
             this.grvTeachers.DataSource = this.bndTeachers;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvTeachers.DefaultCellStyle = dataGridViewCellStyle4;
             this.grvTeachers.Location = new System.Drawing.Point(274, 309);
             this.grvTeachers.Name = "grvTeachers";
             this.grvTeachers.ReadOnly = true;
-            this.grvTeachers.Size = new System.Drawing.Size(249, 83);
+            this.grvTeachers.Size = new System.Drawing.Size(257, 90);
             this.grvTeachers.TabIndex = 1;
             this.grvTeachers.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvTeachers_CellDoubleClick);
             // 
@@ -784,10 +832,18 @@
             this.idDataGridViewTextBoxColumn1,
             this.nameDataGridViewTextBoxColumn1});
             this.grvSubjects.DataSource = this.bndSubjects;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvSubjects.DefaultCellStyle = dataGridViewCellStyle5;
             this.grvSubjects.Location = new System.Drawing.Point(7, 240);
             this.grvSubjects.Name = "grvSubjects";
             this.grvSubjects.ReadOnly = true;
-            this.grvSubjects.Size = new System.Drawing.Size(249, 83);
+            this.grvSubjects.Size = new System.Drawing.Size(257, 90);
             this.grvSubjects.TabIndex = 1;
             this.grvSubjects.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvSubjects_CellDoubleClick);
             // 
@@ -819,10 +875,18 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
             this.grvStudyGroups.DataSource = this.bndStudyGroups;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grvStudyGroups.DefaultCellStyle = dataGridViewCellStyle6;
             this.grvStudyGroups.Location = new System.Drawing.Point(6, 151);
             this.grvStudyGroups.Name = "grvStudyGroups";
             this.grvStudyGroups.ReadOnly = true;
-            this.grvStudyGroups.Size = new System.Drawing.Size(249, 83);
+            this.grvStudyGroups.Size = new System.Drawing.Size(257, 90);
             this.grvStudyGroups.TabIndex = 1;
             this.grvStudyGroups.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvStudyGroups_CellDoubleClick);
             // 
@@ -868,20 +932,15 @@
             this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
-            // barButtonItem9
+            // defaultLookAndFeel1
             // 
-            this.barButtonItem9.Caption = "Устигаючі студенти";
-            this.barButtonItem9.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.Glyph")));
-            this.barButtonItem9.Id = 18;
-            this.barButtonItem9.Name = "barButtonItem9";
-            this.barButtonItem9.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2016 Colorful";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1590, 899);
+            this.ClientSize = new System.Drawing.Size(1598, 899);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.ribbonControl1);
@@ -898,7 +957,7 @@
             this.Controls.Add(this.barDockControl8);
             this.Controls.Add(this.barDockControl6);
             this.Controls.Add(this.barDockControl5);
-            this.MinimumSize = new System.Drawing.Size(800, 600);
+            this.MinimumSize = new System.Drawing.Size(792, 600);
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
@@ -1017,6 +1076,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
     }
 }
 
